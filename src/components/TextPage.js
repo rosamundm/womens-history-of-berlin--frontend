@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 
 export default function TextPage() {
+    
     let { page_slug } = useParams();
     let pageSlug = page_slug;
     const [page, setPage] = useState(null);
@@ -13,9 +14,11 @@ export default function TextPage() {
         }
 
         (async () => {
-            const response = await fetch(`/textpages/${pageSlug}`);
-            const page = await response.json();            
-            setPage(page);
+            const response = await fetch(
+                `/.netlify/functions/get-text-page?slug=${pageSlug}`,
+                {method: "GET"}
+            ).then((response) => response.json());
+            setPage(response);
         })();
         
     }, [pageSlug])
@@ -33,11 +36,11 @@ export default function TextPage() {
             </div>
 
             <div className="p-6 text-6xl">
-                {page.title}
+                {page.data.title}
             </div>
 
             <div className="p-6 text-2xl">
-                <p dangerouslySetInnerHTML={{ __html:page.body}}></p>
+                <p dangerouslySetInnerHTML={{ __html:page.data.body}}></p>
             </div>
 
         </div>

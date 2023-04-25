@@ -9,18 +9,20 @@ export default function DistrictGrid() {
     useEffect(() => {
 
         (async () => {
-            const response = await fetch("/districts");
-            const data = await response.json();
-            setDistricts(data);
+            const response = await fetch(
+                "/.netlify/functions/get-district-list",
+                {method: "GET"}
+            ).then((response) => response.json());
+            setDistricts(response);
         })();
-
+        
     }, []);
 
     return (
 
         <div class="p-8 bg-violet-300">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
-              {districtList.map((district) => (
+              {districtList.data?.map((district) => (
                 <div 
                   class="p-4 bg-red-200 rounded-md flex items-center justify-center" 
                   role="none" 

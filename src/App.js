@@ -19,15 +19,13 @@ export default function App() {
 
                 <Route path="/districts" element={<DistrictBrowser/>}/>
                 <Route path="/districts/:district_slug" element={<DistrictInstance/>}/>
-                <Route path="/districts/:district_slug/:street_slug" element={<StreetInstance/>}/>
+                <Route path="/streets/:street_slug" element={<StreetInstance/>}/>
 
                 <Route path="/:page_slug" element={<TextPage/>}/>
 
               </Routes>
             </Router>
               
-            { /* <Footer/> */ }
-
           </main>
 
       )

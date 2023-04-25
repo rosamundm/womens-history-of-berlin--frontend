@@ -5,8 +5,7 @@ import Navbar from "./layout/Navbar";
 
 function StreetInstance() {
 
-    let { district_slug, street_slug } = useParams();
-    const districtSlug = district_slug;
+    let { street_slug } = useParams();
     const streetSlug = street_slug;
     const [streetInstance, setStreetInstance] = useState(null);
 
@@ -17,9 +16,11 @@ function StreetInstance() {
       }
 
       (async () => {
-          const response = await fetch(`/streets/${streetSlug}`);
-          const streetInstance = await response.json();
-          setStreetInstance(streetInstance);
+          const response = await fetch(
+            `/.netlify/functions/get-street-instance?slug=${streetSlug}`,
+            {method: "GET"}
+          ).then((response) => response.json());
+            setStreetInstance(response);
       })();
 
     }, [streetSlug]);
@@ -28,7 +29,7 @@ function StreetInstance() {
         return <div>Loading...</div>;
     }
 
-    const parsedStreetDescription = parse(streetInstance.eponym_description)
+    const parsedStreetDescription = parse(streetInstance.data.eponym_description)
 
     return (
 
@@ -42,17 +43,17 @@ function StreetInstance() {
 
               <div className="street-image">
                 <img
-                  src={streetInstance.image} 
-                  alt={streetInstance.name}
+                  src={streetInstance.data.image} 
+                  alt={streetInstance.data.name}
                 />
               </div>
 
               <div className="eponym-basic-info" class="p-5 text-2xl bg-sky-100">
-                <a href={streetInstance.map_link}><b>{streetInstance.name}</b></a> {" "}
-                is named after <b>{streetInstance.eponym_name}</b>, {" "}
-                who was born on <b>{streetInstance.eponym_date_of_birth}</b> {" "}
-                in <b>{streetInstance.eponym_place_of_birth}</b>, {" "}
-                and died on <b>{streetInstance.eponym_date_of_death}</b> in <b>{streetInstance.eponym_place_of_death}</b>
+                <a href={streetInstance.data.map_link}><b>{streetInstance.data.name}</b></a> {" "}
+                is named after <b>{streetInstance.data.eponym_name}</b>, {" "}
+                who was born on <b>{streetInstance.data.eponym_date_of_birth}</b> {" "}
+                in <b>{streetInstance.data.eponym_place_of_birth}</b>, {" "}
+                and died on <b>{streetInstance.data.eponym_date_of_death}</b> in <b>{streetInstance.data.eponym_place_of_death}</b>
               
                 <div className="eponym-description" class="p-4">
                   {parsedStreetDescription}
@@ -63,8 +64,8 @@ function StreetInstance() {
           </div>
             
           <div className="back-to-list" class="p-2 bg-violet-300 text-xl">
-            <Link to={`/districts/${districtSlug}`}>
-               See more streets in {streetInstance.district}
+            <Link to={`/districts/${streetInstance.data.district_slug}`}>
+               See more streets in {streetInstance.data.district}
             </Link>
           </div>
 

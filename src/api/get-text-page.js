@@ -1,12 +1,13 @@
 const axios = require("axios");
 require("dotenv").config();
 
-exports.handler = async (context) => {
+exports.handler = async (event, context) => {
 
+  const { slug } = event.queryStringParameters;
   let response
 
   try {
-    response = await axios.get(`${process.env.REACT_APP_PROD_API_URL}/districts`, {
+    response = await axios.get(`${process.env.REACT_APP_PROD_API_URL}/textpages/${slug}`, {
         headers: {
             "Authorization": `JWT ${process.env.REACT_APP_PROD_JWT_TOKEN}`,
             "Accept": "application/json", 
@@ -26,7 +27,7 @@ exports.handler = async (context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      data: response.data
+      data: response.data  // access at /.netlify/functions/get-text-page?slug={slug}
     })
   }
 }
