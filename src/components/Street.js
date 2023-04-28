@@ -29,6 +29,7 @@ function StreetInstance() {
         return <div>Loading...</div>;
     }
 
+    const unknownInfo = <span class="font-style: italic">unknown</span>
     const parsedStreetDescription = parse(streetInstance.data.eponym_description)
 
     return (
@@ -49,12 +50,47 @@ function StreetInstance() {
               </div>
 
               <div className="eponym-basic-info" class="p-5 text-2xl bg-sky-100">
-                <a href={streetInstance.data.map_link}><b>{streetInstance.data.name}</b></a> {" "}
-                is named after <b>{streetInstance.data.eponym_name}</b>, {" "}
-                who was born on <b>{streetInstance.data.eponym_date_of_birth}</b> {" "}
-                in <b>{streetInstance.data.eponym_place_of_birth}</b>, {" "}
-                and died on <b>{streetInstance.data.eponym_date_of_death}</b> in <b>{streetInstance.data.eponym_place_of_death}</b>
-              
+                <div class="text-4xl">
+                  <a href={streetInstance.data.map_link} class="font-bold">
+                    {streetInstance.data.name} {" "}
+                  </a> 
+                  is named after {" "}
+                  <span class="font-extrabold">
+                    {streetInstance.data.eponym_name}
+                  </span>
+                </div>
+               
+                <div class="text-base p-5">
+
+                  Born: {" "}
+                    {streetInstance.data.eponym_date_of_birth ? (
+                      <span class="font-semibold">
+                        {streetInstance.data.eponym_date_of_birth}
+                      </span> 
+                    ): unknownInfo} {" "}
+                  in {" "}
+                    {streetInstance.data.eponym_place_of_birth ? (
+                      <span class="font-semibold">
+                        {streetInstance.data.eponym_place_of_birth}
+                      </span>
+                    ): unknownInfo} {" "}
+                  
+                  <br></br>
+
+                  Died: {" "}
+                    {streetInstance.data.eponym_date_of_death ? (
+                      <span class="font-semibold">
+                        {streetInstance.data.eponym_date_of_death}
+                      </span>
+                    ): unknownInfo} {" "}
+                  in {" "}
+                    {streetInstance.data.eponym_place_of_death ? (
+                      <span class="font-semibold">
+                        {streetInstance.data.eponym_place_of_death}
+                        </span>
+                    ): unknownInfo}
+                </div>
+
                 <div className="eponym-description" class="p-4">
                   {parsedStreetDescription}
                 </div>
