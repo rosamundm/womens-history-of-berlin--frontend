@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import parse from 'html-react-parser';
 import { Link, useParams } from "react-router-dom";
+import parse from 'html-react-parser';
 import Navbar from "./layout/Navbar";
 
 function StreetInstance() {

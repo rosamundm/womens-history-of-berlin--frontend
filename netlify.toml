@@ -1,8 +1,16 @@
 [build]
-functions = "functions/"
-publish = "build"
+publish = "build/"
+functions = "/.netlify/functions/"
 
 [[redirects]]
 from = "/*"
 to = "/.netlify/functions/:splat"
 status = 200
+
+[functions]
+node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

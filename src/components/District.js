@@ -26,13 +26,13 @@ export default function DistrictInstance() {
         
     }, [districtSlug]);
 
-
     if (!districtInstance) {
         return <div>Loading...</div>;
     }
 
     if (validDistrictSlugs.includes(districtSlug) == false) {
         return (
+
             <div>
                 Invalid district; please <Link to="/districts">choose a district</Link>
             </div>

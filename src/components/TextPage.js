@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import parse from 'html-react-parser';
 import Navbar from "./layout/Navbar";
 
 export default function TextPage() {
@@ -27,6 +28,8 @@ export default function TextPage() {
         return <div>Loading...</div>;
     }
 
+    const parsedText = parse(page.data.body)
+
     return (
 
         <div className="container p-8 bg-slate-100">
@@ -40,7 +43,7 @@ export default function TextPage() {
             </div>
 
             <div className="p-6 text-2xl">
-                <p dangerouslySetInnerHTML={{ __html:page.data.body}}></p>
+                {parsedText}
             </div>
 
         </div>
