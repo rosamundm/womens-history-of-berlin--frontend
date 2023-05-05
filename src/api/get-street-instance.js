@@ -3,11 +3,12 @@ require("dotenv").config();
 
 exports.handler = async (event, context) => {
 
-  const { streetSlug } = event.queryStringParameters;
+  const { slug } = event.queryStringParameters;
+
   let response
 
   try {
-    response = await axios.get(`${process.env.REACT_APP_PROD_API_URL}/streets/${streetSlug}`, {
+    response = await axios.get(`${process.env.REACT_APP_PROD_API_URL}/streets/${slug}`, {
         headers: {
             "Authorization": `JWT ${process.env.REACT_APP_PROD_JWT_TOKEN}`,
             "Accept": "application/json", 
