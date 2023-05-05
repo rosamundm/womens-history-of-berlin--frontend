@@ -21,12 +21,12 @@ exports.handler = async (event, context) => {
         error: err.message
       }),
       // function headers need to be specified separately 
-      // from rest of code!
-      headers: JSON.stringify({
+      // from headers pertaining to rest of code!
+      headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": "true",
         "Content-Type": "application/json"
-      }),
+      },
     }
   }
 
@@ -35,11 +35,11 @@ exports.handler = async (event, context) => {
     body: JSON.stringify({
       data: response.data
     }),
-    headers: JSON.stringify({
+    headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": "true",
       "Content-Type": "application/json"
-    }),
+    },
   }
 }
 
