@@ -3,12 +3,12 @@ require("dotenv").config();
 
 exports.handler = async (event, context) => {
 
-  const { slug } = event.queryStringParameters;
-  console.log(slug)
+  const { pageSlug } = event.queryStringParameters;
+
   let response
 
   try {
-    response = await axios.get(`${process.env.REACT_APP_PROD_API_URL}/textpages/${slug}`, {
+    response = await axios.get(`${process.env.REACT_APP_PROD_API_URL}/textpages/${pageSlug}`, {
         headers: {
             "Authorization": `JWT ${process.env.REACT_APP_PROD_JWT_TOKEN}`,
             "Accept": "application/json", 
@@ -18,8 +18,6 @@ exports.handler = async (event, context) => {
 
   } catch (err) {
 
-    console.log(err)
-    
     return {
       statusCode: err.statusCode,
       body: JSON.stringify({
