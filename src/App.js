@@ -4,7 +4,9 @@ import DistrictBrowser from "./components/DistrictBrowser.js";
 import DistrictInstance from "./components/District.js";
 import StreetInstance from "./components/Street.js";
 import HomePage from "./components/Home.js";
-import TextPage from "./components/TextPage.js";
+import About from "./components/staticPages/About.js";
+import Contact from "./components/staticPages/Contact.js";
+import FAQ from "./components/staticPages/FAQ.js";
 
 export default function App() {
 
@@ -21,7 +23,9 @@ export default function App() {
                 <Route path="/districts/:district_slug" element={<DistrictInstance/>}/>
                 <Route path="/streets/:street_slug" element={<StreetInstance/>}/>
 
-                <Route path="/:page_slug" element={<TextPage/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/faq" element={<FAQ/>}/>
 
               </Routes>
             </Router>
