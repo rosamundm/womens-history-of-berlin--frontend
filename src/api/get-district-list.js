@@ -16,10 +16,16 @@ exports.handler = async (context) => {
 
   } catch (err) {
     return {
-      statusCode: err.statusCode || 500,
+      statusCode: err.statusCode,
       body: JSON.stringify({
         error: err.message
-      })
+      }),
+      // function headers need to be specified separately 
+      // from rest of code!
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      },
     }
   }
 
@@ -27,6 +33,10 @@ exports.handler = async (context) => {
     statusCode: 200,
     body: JSON.stringify({
       data: response.data
-    })
+    }),
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json"
+    },
   }
 }

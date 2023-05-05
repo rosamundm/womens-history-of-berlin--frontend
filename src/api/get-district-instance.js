@@ -20,7 +20,11 @@ exports.handler = async (event, context) => {
       statusCode: err.statusCode || 500,
       body: JSON.stringify({
         error: err.message
-      })
+      }),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      },
     }
   }
 
@@ -28,6 +32,10 @@ exports.handler = async (event, context) => {
     statusCode: 200,
     body: JSON.stringify({
       data: response.data  // access at /.netlify/functions/get-district-instance?slug={slug}
-    })
+    }),
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json"
+    },
   }
 }
