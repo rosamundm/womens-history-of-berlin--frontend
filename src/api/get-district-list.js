@@ -11,15 +11,23 @@ exports.handler = async (event, context) => {
           "Accept": "application/json", 
           "Content-Type": "application/json"
         }
-      })
-        .then((response) => ({
-            statusCode: 200,
-            body: JSON.stringify(response.data),
-        }))
-        .catch((error) => ({
-            statusCode: 500,
-            body: JSON.stringify(error.message),
-        }));
+    })
+      .then((response) => ({
+          statusCode: 200,
+          body: JSON.stringify(response.data),
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+          },
+      }))
+      .catch((error) => ({
+          statusCode: 500,
+          body: JSON.stringify(error.message),
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+          },
+      }));
 
 
 
