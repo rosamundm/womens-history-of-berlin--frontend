@@ -1,14 +1,10 @@
 import React from "react";
-import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
 
-export default function Contact() {
+export default function ContactPage() {
 
     return (
         <div class="container p-8 bg-slate-100">
-
-          <div className="navbar">
-            <Navbar />
-          </div>
 
           <div class="p-6 bg-sky-100">
 
@@ -70,6 +66,10 @@ export default function Contact() {
 
               </div>
    
+          </div>
+
+          <div>
+            <Footer/>
           </div>
 
 

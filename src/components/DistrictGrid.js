@@ -24,7 +24,7 @@ export default function DistrictGrid() {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               {districtList.data?.map((district) => (
                 <div 
-                  class="p-12 bg-red-200 rounded-md flex items-center justify-center" 
+                  class="p-12 bg-red-200 rounded-md flex items-center justify-center font-serif" 
                   role="none" 
                   key={district.name} 
                   onClick={() => setSelectedDistrict(district)}>   

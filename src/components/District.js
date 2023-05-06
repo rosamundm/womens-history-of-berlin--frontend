@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
 import { validDistrictSlugs } from "../constants";
 
 export default function DistrictInstance() {
@@ -45,10 +45,6 @@ export default function DistrictInstance() {
 
             <div class="container p-8 bg-slate-100">
 
-                <div className="navbar">
-                    <Navbar />
-                </div>
-
                 <div class="p-6 text-6xl">{districtInstance.data.name}</div>
              
                 <div className="street-list" class="p-8">
@@ -64,10 +60,14 @@ export default function DistrictInstance() {
                     ))}
                 </div>
               
-                <div className="back-to-list">
+                <div class="p-6">
                     <Link to={"/districts/"}>
                         Back to district list
                     </Link>
+                </div>
+
+                <div>
+                    <Footer/>
                 </div>
     
             </div>
@@ -79,10 +79,6 @@ export default function DistrictInstance() {
         
             <div class="container p-8 bg-slate-100">
         
-                <div className="navbar">
-                    <Navbar />
-                </div>
-        
                 <div class="p-6 text-6xl">{districtInstance.data.name}</div>
                      
                     <div className="street-list" class="p-8">
@@ -93,6 +89,10 @@ export default function DistrictInstance() {
                         <Link to={"/districts/"}>
                             Back to district list
                         </Link>
+                    </div>
+
+                    <div>
+                        <Footer/>
                     </div>
             
                 </div>       

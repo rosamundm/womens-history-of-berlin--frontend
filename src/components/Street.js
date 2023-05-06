@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import parse from 'html-react-parser';
-import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
 
 function StreetInstance() {
 
@@ -35,10 +35,6 @@ function StreetInstance() {
     return (
 
         <div class="container p-8 bg-slate-100">
-
-          <div className="navbar">
-            <Navbar />
-          </div>
 
           <div className="street-detail" class="p-6 bg-sky-100">
 
@@ -103,6 +99,10 @@ function StreetInstance() {
             <Link to={`/districts/${streetInstance.data.district_slug}`}>
                See more streets in {streetInstance.data.district}
             </Link>
+          </div>
+
+          <div>
+            <Footer/>
           </div>
 
         </div>

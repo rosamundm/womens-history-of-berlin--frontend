@@ -11,7 +11,7 @@ export default function HomePage() {
 
         <div className="search">
 
-          <div className="get-started" class="px-5 justify-center text-2xl">
+          <div className="get-started" class="px-5 py-5 justify-center text-2xl">
             <Link to={"/districts/"}>
               Get started ⟶
             </Link>
