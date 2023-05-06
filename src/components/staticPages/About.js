@@ -15,7 +15,7 @@ export default function AboutPage() {
                         About
                     </div>
                     <p class="pb-2.5">
-                        My name is Rosamund. I'm a software developer, writer, and ex-translator originally from the UK.
+                        My name is Rosamund. I'm a software developer, writer, and <s>ex-</s>translator originally from the UK.
                     </p>
                     <p class="pb-2.5">
                         I've always been obsessed with maps and streets (even designing my own towns as a kid…) and 
@@ -53,10 +53,10 @@ export default function AboutPage() {
                     <p class="pb-2.5">
                         These pages are a work in progress. I wanted to publish the website before it was done, because I'm not sure exactly how long it's
                         going to take me to visit every single street sign and take a photo of it. I've already spent hours figuring out where the streets are, 
-                        which women are linked to them, and added them all to a map. That's not to mention all the research.
+                        which women are linked to them, and added them all to a map. That's not to mention all the research and actually engineering this website...
                     </p>
                     <p class="pb-2.5">
-                        The information that I add to the pages is in the public domain unless specified otherwise.
+                        Unless specified otherwise, the information that I add to the pages is in the public domain.
                     </p>
                     
                 </div>
