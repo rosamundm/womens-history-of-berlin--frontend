@@ -12,7 +12,7 @@ export default function FaqPage() {
 
                 <div class="p-5 px-2.5">
                     
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         There's a famous Berlin street named after a princess that I can't find on 
                         here, for some reason. Why?
                     </div>
@@ -34,14 +34,14 @@ export default function FaqPage() {
                         For the people I do profile, hopefully it goes without saying that I don't necessarily agree with every single thing they stood for.
                         Don't @ me about deliberately leaving out people I'm not particularly interested in researching. My website, my rules 🤠
                     </p>
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         I see a street missing. Shall I point this out to you?
                     </div>
                     <p class="pb-2.5">
                         It might already be on my to-do list, but: yes, feel free! If you can provide some interesting sources about the person's 
                         story, even better.
                     </p>
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         Why are you using the names of countries that didn't exist at that point, or that no longer exist?
                     </div>
                     <p class="pb-2.5">
@@ -64,7 +64,7 @@ export default function FaqPage() {
                         The concept of a nation can be a complex one, but if you're that interested in the history of a city where a certain figure died or was 
                         born, the internet is your oyster.
                     </p>
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         This is sexist!
                     </div>
                     <p class="pb-2.5">

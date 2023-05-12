@@ -11,7 +11,7 @@ export default function ContactPage() {
               <div className="eponym-basic-info" class="p-5 text-2xl bg-sky-100">
 
                 <div class="p-5 px-2.5">
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         Angaben gemäß §5 TMG
                     </div>
                     <p class="pb-2.5">
@@ -21,7 +21,7 @@ export default function ContactPage() {
                         <br></br>
                         <b>E-Mail:</b> rosamund at posteo dot de
                     </p>
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         Haftungsausschluss
                     </div>
                     <p class="pb-2.5">
@@ -36,7 +36,7 @@ export default function ContactPage() {
                         Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese 
                         Inhalte umgehend entfernen.
                     </p>
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         Haftung für Links
                     </div>
                     <p class="pb-2.5">
@@ -48,7 +48,7 @@ export default function ContactPage() {
                         jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen 
                         werden wir derartige Links umgehend entfernen.
                     </p>
-                    <div class="text-4xl py-2.5">
+                    <div class="text-4xl py-4">
                         Urheberrecht
                     </div>
                     <p class="pb-2.5">
