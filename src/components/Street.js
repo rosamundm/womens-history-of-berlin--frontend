@@ -26,7 +26,7 @@ function StreetInstance() {
     }, [streetSlug]);
 
     if (!streetInstance) {
-        return <div>Loading...</div>;
+      return <div>Loading...</div>;
     }
 
     const unknownInfo = <span class="font-style: italic">unknown</span>
@@ -45,7 +45,7 @@ function StreetInstance() {
                 />
               </div>
 
-              <div className="eponym-basic-info" class="p-5 text-2xl bg-sky-100">
+              <div className="eponym-basic-info" class="p-5 bg-sky-100">
                 <div class="text-4xl">
                   <a href={streetInstance.data.map_link} class="font-bold">
                     {streetInstance.data.name} {" "}
@@ -87,7 +87,7 @@ function StreetInstance() {
                     ): unknownInfo}
                 </div>
 
-                <div className="eponym-description" class="p-4">
+                <div className="eponym-description" class="p-4 sm:text-lg md:text-2xl lg:text-2xl">
                   {parsedStreetDescription}
                 </div>
 
