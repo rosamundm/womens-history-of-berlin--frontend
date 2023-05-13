@@ -10,6 +10,8 @@ import FaqPage from "./components/staticPages/FAQ.js";
 
 export default function App() {
 
+      // comment for test commit
+
       return (
 
           <main className="text-indigo-800 bg-teal-100 body-font min-h-screen flex items-center justify-center font-serif">
