@@ -14,7 +14,7 @@ export default function App() {
 
       return (
 
-          <main className="text-indigo-800 bg-teal-100 body-font min-h-screen flex items-center justify-center font-serif">
+          <main className="text-indigo-800 bg-[#D0F8FC] body-font min-h-screen flex items-center justify-center font-serif">
 
             <Router>
               <Routes>

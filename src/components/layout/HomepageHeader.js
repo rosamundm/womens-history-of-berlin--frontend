@@ -7,11 +7,12 @@ function HomepageHeader() {
             Berliner Frauen:
             <div class="text-4xl py-10">
                 a project dedicated to women's legacy on Berlin's streets
-            </div>
-            <div class="text-8xl py-2">
-                <Link to={"/districts/"}>
+                <br></br>
+                <span class="text-6xl">
+                    <Link to={"/districts/"}>
                     ⟶
-                </Link>
+                    </Link>
+                </span>
             </div>
         </div>
        </div>

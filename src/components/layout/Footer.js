@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
   
-    <footer class="bg-white rounded-lg shadow m-4">
+    <footer class="bg-[#F0FEFF] rounded-lg shadow m-4">
       <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm text-gray-500 sm:text-center">
           © Rosamund Mather {(new Date().getFullYear())}
