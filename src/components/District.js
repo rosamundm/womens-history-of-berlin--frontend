@@ -92,7 +92,7 @@ export default function DistrictInstance() {
                         No streets added yet for this district — keep checking back!
                     </div>
                       
-                    <div className="back-to-list">
+                    <div className="p-6">
                         <Link to={"/districts/"}>
                             Back to district list
                         </Link>
