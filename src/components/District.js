@@ -27,14 +27,17 @@ export default function DistrictInstance() {
     }, [districtSlug]);
 
     if (!districtInstance) {
-        return <div>Loading...</div>;
-    }
-
-    if (validDistrictSlugs.includes(districtSlug) == false) {
         return (
-
-            <div>
-                Invalid district; please <Link to="/districts">choose a district</Link>
+            <div class="container p-8 bg-slate-100">
+                <div class="p-6 text-3xl">
+                    Loading streets for this district...
+                    <div class="py-3 text-xl">
+                        If it takes too long, please try again or check that the URL is valid.
+                    </div>   
+                </div>
+                <div>
+                    <Footer/>
+                </div>
             </div>
         );
     }

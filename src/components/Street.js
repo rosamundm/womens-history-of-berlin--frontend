@@ -26,7 +26,19 @@ function StreetInstance() {
     }, [streetSlug]);
 
     if (!streetInstance) {
-      return <div>Loading...</div>;
+      return (
+        <div class="container p-8 bg-slate-100">
+            <div class="p-6 text-3xl">
+                Loading details for this street...
+                <div class="py-3 text-xl">
+                  If it takes too long, please try again or check that the URL is valid.
+                </div>
+            </div>
+            <div>
+                <Footer/>
+            </div>
+        </div>
+    );
     }
 
     const unknownInfo = <span class="font-style: italic">unknown</span>
