@@ -24,23 +24,26 @@ export default function DistrictGrid() {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               {districtList.data?.map((district) => (
                 <div 
-                  class="p-12 bg-[#E1D0FC] rounded-md flex items-center justify-center font-serif" 
+                  class="p-12 bg-[#E1D0FC] rounded-md flex items-center justify-center font-serif group/item hover:bg-white" 
                   role="none" 
                   key={district.name} 
-                  onClick={() => setSelectedDistrict(district)}>   
+                  onClick={() => setSelectedDistrict(district)}
+                >   
 
                     <div>
+                        {district.number_of_completed_streets > 0 ? (
                         <Link 
                             to={`/districts/${district.district_slug}`}>{district.name}
                         </Link>
+                        ) : (
+                            <span>{district.name}</span>
+                        )}
 
                         <br></br>
 
-                        {/* Add to flip card later:
-
-                        <span class="text-xs">
-                            ({district.number_of_completed_streets} / {district.number_of_added_streets} entries available)
-                        </span> */}
+                        <span class="text-xs group/edit invisible group-hover/item:visible">
+                            {district.number_of_completed_streets} entries available
+                        </span>
 
                     </div>
 
