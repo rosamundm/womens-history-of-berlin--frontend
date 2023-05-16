@@ -6,7 +6,7 @@ function HomepageHeader() {
         <div class="font-serif font-semibold text-6xl text-center">
             women's history of berlin
             <div class="text-4xl font-light py-10">
-                a project dedicated to the legacy of women in the city's street names
+                a project dedicated to the legacy of women in city street names
                 <br></br>
                 <span class="text-6xl">
                     <Link to={"/districts/"}>
