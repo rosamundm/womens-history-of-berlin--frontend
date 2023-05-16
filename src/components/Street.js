@@ -99,7 +99,7 @@ function StreetInstance() {
                     ): unknownInfo}
                 </div>
 
-                <div className="eponym-description" class="p-4 sm:text-lg md:text-2xl lg:text-2xl text-justify">
+                <div className="eponym-description" class="p-4 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify">
                   {parsedStreetDescription}
                 </div>
 
