@@ -57,7 +57,7 @@ function StreetInstance() {
                 />
               </div>
 
-              <div className="eponym-basic-info" class="p-5 bg-sky-100">
+              <div className="eponym-basic-info" class="sm:p-2.5 md:p-5 lg:p-5 bg-sky-100">
                 <div class="text-4xl">
                   <a href={streetInstance.data.map_link} class="font-bold">
                     {streetInstance.data.name} {" "}

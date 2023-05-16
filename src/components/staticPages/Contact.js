@@ -8,7 +8,7 @@ export default function ContactPage() {
 
           <div class="p-6 bg-sky-100">
 
-              <div className="eponym-basic-info" class="p-5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify g-sky-100">
+              <div className="eponym-basic-info" class="sm:p-2.5 md:p-5 lg:p-5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify g-sky-100">
 
                 <div class="p-5 px-2.5">
                     <div class="text-4xl py-4">
