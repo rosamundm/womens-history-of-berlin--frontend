@@ -38,7 +38,7 @@ export default function FaqPage() {
                         I see a street missing. Shall I point this out to you?
                     </div>
                     <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-                        It might already be on my to-do list, but: yes, feel free! If you can provide some interesting sources about the person's 
+                        It's very possibly already on my to-do list, but: yes, feel free! If you can provide some interesting sources about the person's 
                         story, even better.
                     </p>
                     <div class="text-4xl py-4">
@@ -55,7 +55,12 @@ export default function FaqPage() {
                         to all German and thus presupposing an imperial German lens on the place, as well as the reader's knowledge of the German names) or <i>Schwiebus, Prussia</i> (German/English mix, illogical and pointless for my audience).
                     </p>
                     <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-                        Take as an example the fact that many Ukrainians are asking the world to refer to their capital city as <i>Kyiv</i> (Ukrainian transliteration) 
+                        However, an exception to this, in turn, is for cases of those who perished in concentration camps: using the modern name plus the better-known German name in
+                        brackets, e.g. <i>Terezín (Theresienstadt), Czech Republic</i>. I want to nod to its current location but I feel it is unethical to erase the fact the person 
+                        was murdered by Nazis in this repugnant, systematic way.
+                    </p>
+                    <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
+                        If my logic is still a mystery: take as an example the fact that many Ukrainians are asking the world to refer to their capital city as <i>Kyiv</i> (Ukrainian transliteration) 
                         and not <i>Kiev</i> (Russian transliteration) outside of those respective languages. Although both languages are widely spoken in Ukraine, they want 
                         the official language — the one that's unique to their culture, which in turn has centuries of ongoing history of being repressed by the other 
                         culture — to take precedent.
@@ -63,6 +68,20 @@ export default function FaqPage() {
                     <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
                         The concept of a nation can be a complex one, but if you're that interested in the history of a place where a certain figure died or was 
                         born, the internet is your oyster.
+                    </p>
+                    <div class="text-4xl py-4">
+                        What about non-binary or genderfluid people?
+                    </div>
+                    <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
+                        In light of the political climate in the US and elsewhere, I want to make it crystal clear that I fully support you.
+                    </p>
+                    <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
+                        As much as I dislike adhering to a gender binary in my work, as far as I'm aware, none of the figures I've read about so far have been anything other 
+                        than cis women (on that note, I'll add that if I do come across any trans women, they will obviously be treated as women).
+                    </p>
+                    <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
+                        This could change at any time during my research, and in that case, I guess I would rename the project. If you have any ideas for names that open the project up 
+                        to gender-expansiveness, get in touch.
                     </p>
                     <div class="text-4xl py-4">
                         This is sexist!

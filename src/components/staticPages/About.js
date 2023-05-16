@@ -84,7 +84,7 @@ export default function AboutPage() {
                     </ul>
                         
                     <p class="pb-2.5">
-                       As you can see, quite a lot of labour goes into this... and that's not even mentioning actually engineering the website itself. So, if you appreciate my
+                       As you can see, this involves quite a lot of labour... and I haven't even mentioned what goes into engineering the website itself. So, if you appreciate my
                        work and would like to show a token of appreciation, you're welcome to <a href="https://ko-fi.com/rosamund">buy me a coffee</a>.
                     </p>
 
