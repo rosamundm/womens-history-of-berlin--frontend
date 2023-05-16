@@ -7,6 +7,7 @@ import HomePage from "./components/Home.js";
 import AboutPage from "./components/staticPages/About.js";
 import ContactPage from "./components/staticPages/Contact.js";
 import FaqPage from "./components/staticPages/FAQ.js";
+import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
 
 export default function App() {
 
@@ -28,6 +29,8 @@ export default function App() {
                 <Route path="/about" element={<AboutPage/>}/>
                 <Route path="/contact" element={<ContactPage/>}/>
                 <Route path="/faq" element={<FaqPage/>}/>
+                <Route path="/impressum" element={<ImpressumDatenschutzPage/>}/>
+
 
               </Routes>
             </Router>

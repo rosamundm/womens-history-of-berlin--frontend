@@ -52,16 +52,16 @@ export default function FaqPage() {
                     <p class="pb-2.5 text-justify">
                         The exception is using the widespread English name where it's available, e.g. <i>Vienna</i> and not <i>Wien</i>. My project is in English 
                         and so I don't want to overcomplicate things by having to make decisions like whether I would call it <i>Schwiebus, Preußen</i> (sticking 
-                        to all German and thus presupposing an imperial German lens on the place) or <i>Schwiebus, Prussia</i> (German/English mix, illogical and 
-                        pointless for my audience).
+                        to all German and thus presupposing an imperial German lens on the place, as well as the reader's knowledge of the German names) or <i>Schwiebus, Prussia</i> (German/English mix, illogical and pointless for my audience).
                     </p>
                     <p class="pb-2.5 text-justify">
                         Take as an example the fact that many Ukrainians are asking the world to refer to their capital city as <i>Kyiv</i> (Ukrainian transliteration) 
-                        and not <i>Kiev</i> (Russian transliteration) outside of those respective languages. They want the official language — the one that's unique to 
-                        their culture, which in turn has centuries of ongoing history of being repressed by the other culture — to take precedent.
+                        and not <i>Kiev</i> (Russian transliteration) outside of those respective languages. Although both languages are widely spoken in Ukraine, they want 
+                        the official language — the one that's unique to their culture, which in turn has centuries of ongoing history of being repressed by the other 
+                        culture — to take precedent.
                     </p>
                     <p class="pb-2.5 text-justify">
-                        The concept of a nation can be a complex one, but if you're that interested in the history of a city where a certain figure died or was 
+                        The concept of a nation can be a complex one, but if you're that interested in the history of a place where a certain figure died or was 
                         born, the internet is your oyster.
                     </p>
                     <div class="text-4xl py-4">
