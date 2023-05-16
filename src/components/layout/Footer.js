@@ -30,6 +30,11 @@ function Footer() {
               Contact
             </Link>
           </li>
+          <li>
+            <Link to="/impressum" class="mr-4 hover:underline md:mr-6">
+              Impressum/Datenschutz
+            </Link>
+          </li>
       </ul>
       </div>
   </footer>

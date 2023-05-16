@@ -18,6 +18,16 @@ export default function DistrictGrid() {
         
     }, []);
 
+    if (districtList.length === 0) {
+        return(
+            <div class="p-8 bg-violet-300">
+                <div class="p-6 text-3xl font-serif">
+                    Loading districts...
+                </div>
+            </div>
+        )
+    } else {
+
     return (
 
         <div class="p-8 bg-violet-300">
@@ -42,7 +52,7 @@ export default function DistrictGrid() {
                         <br></br>
 
                         <span class="text-xs group/edit invisible group-hover/item:visible">
-                            {district.number_of_completed_streets} entries available
+                            {district.number_of_completed_streets} entries added
                         </span>
 
                     </div>
@@ -54,5 +64,5 @@ export default function DistrictGrid() {
             
         </div>
             
-    )
+    )}
 };

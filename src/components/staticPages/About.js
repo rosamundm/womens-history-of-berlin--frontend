@@ -19,7 +19,7 @@ export default function AboutPage() {
                     </p>
                     <p class="pb-2.5">
                         I've always been obsessed with maps and streets (even designing my own towns as a kid…) and 
-                        since moving to Berlin in 2014, this has reached a whole new level. Given the multiple layers 
+                        since moving to Berlin, Germany in 2014, this has reached a whole new level. Given the multiple layers 
                         of history that distinguish this city, there's quite a bit for me left to uncover.
                     </p>
                     <p class="pb-2.5">
@@ -66,20 +66,20 @@ export default function AboutPage() {
                     <ul class="px-6 py-4 list-disc">
                         <li class="py-4">
                             Use a combination of web scraping and manual research to identify the relevant streets, women linked to them, and core information such as location.
-                            Document these in a spreadsheet and mark to-be-visited streets on a private (for now) map service
+                            Document these in a spreadsheet and mark to-be-visited streets on a private (for now) map service.
                         </li>
                         <li class="py-4">
-                            If I'm going somewhere in the city, check map for whether there are any streets nearby I can take a quick detour to; otherwise, do an expedition in my free time
+                            If I'm going somewhere in the city, check map for whether there are any streets nearby I can take a quick detour to for a photo; otherwise, do an expedition in my free time.
                         </li>
                         <li  class="py-4">
-                            When I have taken a photo of the street sign, upload it to an external image hosting service
+                            When I have taken a photo of the street sign, upload it to an external image hosting service.
                         </li>
                         <li class="py-4">
                             Record these entries in a CMS with information gleaned from the spreadsheet, add photo; put together a 
-                            summarised biography of the person. <b>Unless specified otherwise, the information that I add to the pages is in the public domain</b>
+                            summarised biography of the person. <b>Unless specified otherwise, the information that I add to the pages is in the public domain & translations from German quotations are my own.</b>
                         </li>
                         <li class="py-4">
-                            Do final checks, mark it as done, then it becomes available to view on the website
+                            Do final checks, mark it as done, then it becomes available to view on the website.
                         </li>
                     </ul>
                         
