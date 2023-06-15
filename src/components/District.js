@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "./layout/Footer";
-import { validDistrictSlugs } from "../constants";
 
 export default function DistrictInstance() {
 
