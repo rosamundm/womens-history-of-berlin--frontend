@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 export default function DistrictGrid() {
     
     const [districtList, setDistricts] = useState([]);
@@ -37,6 +38,10 @@ export default function DistrictGrid() {
                   class="p-12 bg-[#E1D0FC] rounded-md flex items-center justify-center font-serif group/item hover:bg-white" 
                   role="none" 
                   key={district.name} 
+                  style={{ 
+                    backgroundImage: `url(${"/assets/" + district.image_path})`,
+                    backgroundPosition: "center"
+                }}
                   onClick={() => setSelectedDistrict(district)}
                 >   
 
