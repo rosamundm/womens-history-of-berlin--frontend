@@ -40,6 +40,8 @@ export default function DistrictGrid() {
                   key={district.name} 
                   style={{ 
                     backgroundImage: `url(${"/assets/" + district.image_path})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
                     backgroundPosition: "center"
                 }}
                   onClick={() => setSelectedDistrict(district)}
