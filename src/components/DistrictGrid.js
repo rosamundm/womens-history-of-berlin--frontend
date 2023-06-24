@@ -49,18 +49,30 @@ export default function DistrictGrid() {
 
                     <div>
                         {district.number_of_completed_streets > 0 ? (
-                        <Link 
-                            to={`/districts/${district.district_slug}`}>{district.name}
-                        </Link>
+                        <span class="text-2xl bg-white">
+                            <Link 
+                                to={`/districts/${district.district_slug}`}>{district.name}
+                            </Link>
+                        </span>
                         ) : (
-                            <span>{district.name}</span>
+                            <span class="text-2xl bg-slate-400 text-white">
+                                {district.name}
+                            </span>
                         )}
 
                         <br></br>
 
-                        <span class="text-xs group/edit invisible group-hover/item:visible">
-                            {district.number_of_completed_streets} entries added
-                        </span>
+                        {district.number_of_completed_streets === 0 ? (
+
+                            <span class="text-base text-white group/edit invisible group-hover/item:visible bg-slate-400">
+                                0 entries added
+                            </span>
+
+                        ) : (
+                            <span class="text-base group/edit invisible group-hover/item:visible bg-white">
+                                {district.number_of_completed_streets} entries added
+                            </span>
+                        )}
 
                     </div>
 
