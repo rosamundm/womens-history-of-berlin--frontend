@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 export default function DistrictGrid() {
     
     const [districtList, setDistricts] = useState([]);
@@ -37,23 +38,41 @@ export default function DistrictGrid() {
                   class="p-12 bg-[#E1D0FC] rounded-md flex items-center justify-center font-serif group/item hover:bg-white" 
                   role="none" 
                   key={district.name} 
+                  style={{ 
+                    backgroundImage: `url(${"/assets/" + district.image_path})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center"
+                }}
                   onClick={() => setSelectedDistrict(district)}
                 >   
 
                     <div>
                         {district.number_of_completed_streets > 0 ? (
-                        <Link 
-                            to={`/districts/${district.district_slug}`}>{district.name}
-                        </Link>
+                        <span class="text-2xl bg-white">
+                            <Link 
+                                to={`/districts/${district.district_slug}`}>{district.name}
+                            </Link>
+                        </span>
                         ) : (
-                            <span>{district.name}</span>
+                            <span class="text-2xl bg-slate-400 text-white">
+                                {district.name}
+                            </span>
                         )}
 
                         <br></br>
 
-                        <span class="text-xs group/edit invisible group-hover/item:visible">
-                            {district.number_of_completed_streets} entries added
-                        </span>
+                        {district.number_of_completed_streets === 0 ? (
+
+                            <span class="text-base text-white group/edit invisible group-hover/item:visible bg-slate-400">
+                                0 entries added
+                            </span>
+
+                        ) : (
+                            <span class="text-base group/edit invisible group-hover/item:visible bg-white">
+                                {district.number_of_completed_streets} entries added
+                            </span>
+                        )}
 
                     </div>
 
