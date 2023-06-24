@@ -8,6 +8,7 @@ import AboutPage from "./components/staticPages/About.js";
 import ContactPage from "./components/staticPages/Contact.js";
 import FaqPage from "./components/staticPages/FAQ.js";
 import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
+import PhotoCreditsPage from "./components/staticPages/PhotoCredits.js";
 
 export default function App() {
 
@@ -30,7 +31,7 @@ export default function App() {
                 <Route path="/contact" element={<ContactPage/>}/>
                 <Route path="/faq" element={<FaqPage/>}/>
                 <Route path="/impressum" element={<ImpressumDatenschutzPage/>}/>
-
+                <Route path="/credits" element={<PhotoCreditsPage/>}/>
 
               </Routes>
             </Router>

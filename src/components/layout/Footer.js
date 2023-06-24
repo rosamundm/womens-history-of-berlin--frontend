@@ -7,14 +7,9 @@ function Footer() {
     <footer class="bg-[#F0FEFF] rounded-lg shadow m-4">
       <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm text-gray-500 sm:text-center">
-          © Rosamund Mather {(new Date().getFullYear())}
+          © Rosamund Mather {(new Date().getFullYear())} unless stated otherwise.
         </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
-          <li>
-            <Link to="/districts" class="mr-4 hover:underline md:mr-6">
-              Districts
-            </Link>
-          </li>
+        <ul class="flex flex-wrap mt-3 text-sm font-medium text-gray-500 sm:mt-0">
           <li>
             <Link to="/about" class="mr-4 hover:underline md:mr-6">
               About
@@ -32,7 +27,12 @@ function Footer() {
           </li>
           <li>
             <Link to="/impressum" class="mr-4 hover:underline md:mr-6">
-              Impressum/Datenschutz
+              Impressum & Datenschutz
+            </Link>
+          </li>
+          <li>
+            <Link to="/credits" class="mr-4 hover:underline md:mr-6">
+              Photo Credits
             </Link>
           </li>
       </ul>
