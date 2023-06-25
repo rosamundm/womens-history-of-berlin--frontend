@@ -62,10 +62,10 @@ export default function DistrictGrid() {
 
                         <br></br>
 
-                        {district.number_of_completed_streets === 0 ? (
+                        {district.number_of_completed_streets === 1 ? (
 
-                            <span class="text-base text-white group/edit invisible group-hover/item:visible bg-slate-400">
-                                0 entries added
+                            <span class="text-base group/edit invisible group-hover/item:visible bg-white">
+                                1 entry added
                             </span>
 
                         ) : (
