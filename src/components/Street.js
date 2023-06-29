@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import parse from 'html-react-parser';
 import Footer from "./layout/Footer";
 
-function StreetInstance() {
+export default function StreetInstance() {
 
     let { street_slug } = useParams();
     const streetSlug = street_slug;
@@ -38,7 +38,7 @@ function StreetInstance() {
                 <Footer/>
             </div>
         </div>
-    );
+      );
     }
 
     const unknownInfo = <span class="font-style: italic">unknown</span>
@@ -119,6 +119,4 @@ function StreetInstance() {
 
         </div>
     );
-}
-
-export default StreetInstance;
+};

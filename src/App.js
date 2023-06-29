@@ -9,10 +9,10 @@ import ContactPage from "./components/staticPages/Contact.js";
 import FaqPage from "./components/staticPages/FAQ.js";
 import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
 import PhotoCreditsPage from "./components/staticPages/PhotoCredits.js";
+import BlogList from "./components/BlogList.js";
+import BlogPostInstance from "./components/BlogPost.js";
 
 export default function App() {
-
-      // comment for test commit
 
       return (
 
@@ -26,6 +26,8 @@ export default function App() {
                 <Route path="/districts" element={<DistrictBrowser/>}/>
                 <Route path="/districts/:district_slug" element={<DistrictInstance/>}/>
                 <Route path="/streets/:street_slug" element={<StreetInstance/>}/>
+                <Route path="/news" element={<BlogList/>}/>
+                <Route path="/news/:slug" element={<BlogPostInstance/>}/>
 
                 <Route path="/about" element={<AboutPage/>}/>
                 <Route path="/contact" element={<ContactPage/>}/>

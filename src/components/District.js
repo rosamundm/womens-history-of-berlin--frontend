@@ -26,7 +26,9 @@ export default function DistrictInstance() {
     }, [districtSlug]);
 
     if (!districtInstance) {
+
         return (
+
             <div class="container p-8 bg-slate-100">
                 <div class="p-6 text-3xl">
                     Loading streets for this district...
@@ -38,6 +40,7 @@ export default function DistrictInstance() {
                     <Footer/>
                 </div>
             </div>
+            
         );
     }
 
