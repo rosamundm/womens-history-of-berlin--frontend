@@ -27,7 +27,12 @@ function Footer() {
           </li>
           <li>
             <Link to="/impressum" class="mr-4 hover:underline md:mr-6">
-              Impressum & Datenschutz
+              Impressum
+            </Link>
+          </li>
+          <li>
+            <Link to="/news" class="mr-4 hover:underline md:mr-6">
+              News
             </Link>
           </li>
           <li>
