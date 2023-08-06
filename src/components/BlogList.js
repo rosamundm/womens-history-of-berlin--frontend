@@ -41,7 +41,7 @@ export default function BlogList() {
              
                 <div className="street-list" class="p-8">
 
-                    {posts.data?.map((post) => (
+                    {posts.data.map((post) => (
 
                         <div 
                             className="text-2xl p-3"
