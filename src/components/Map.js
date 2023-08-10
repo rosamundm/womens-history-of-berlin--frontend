@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import Footer from "./layout/Footer";
 
 function getMapCenter() {
     const map = useMap()
@@ -52,29 +53,33 @@ export default function Map() {
 
         return (
 
-            <MapContainer
-                center={[52.5170124, 13.389094]}
-                zoom={10}
-                style={{ height: "100vh", width: "100vh" }}
-            >
+            <>
+            <div className="landing" class="px-500 justify-center justify-items-center max-w-4xl m-auto py-8">
+                <MapContainer
+                    center={[52.5170124, 13.389094]}
+                    zoom={10}
+                    style={{ height: "100vh", width: "100vh" }}
+                >
                 <getMapCenter />
                 <TileLayer
                     attribution={attribution}
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                {mapStreets.data.map(mapStreet => (
-                    <Marker position={mapStreet.geocode} icon={customIcon}>
-                        <Popup>
-                            <Link
-                                target="_blank"
-                                to={`/streets/${mapStreet.street_slug}`}>
-                                    {mapStreet.name}
-                            </Link>
-                        </Popup>
-                    </Marker>
-                ))}
-        </MapContainer>
+                    {mapStreets.data.map(mapStreet => (
+                        <Marker position={mapStreet.geocode} icon={customIcon}>
+                            <Popup>
+                                <Link
+                                    target="_blank"
+                                    to={`/streets/${mapStreet.street_slug}`}>
+                                        {mapStreet.name}
+                                </Link>
+                            </Popup>
+                        </Marker>
+                    ))}
+                </MapContainer>
+            </div>
+        </>
 
         )
     }
