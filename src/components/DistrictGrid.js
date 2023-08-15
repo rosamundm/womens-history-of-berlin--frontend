@@ -20,7 +20,7 @@ export default function DistrictGrid() {
     }, []);
 
     if (districtList.length === 0) {
-        return(
+        return (
             <div class="p-8 bg-violet-300">
                 <div class="p-6 text-3xl font-serif">
                     Loading districts...
