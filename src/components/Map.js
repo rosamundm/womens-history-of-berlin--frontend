@@ -63,17 +63,6 @@ export default function Map() {
 
                 <div class="p-6 bg-sky-100">
                     <div class="p-5 px-2.5">
-                        <div class="text-4xl py-4">
-                            Map
-                        </div>
-                        <p class="pb-2.5 text-xl">
-                            Here's a topographic representation of the Berlin streets named after women. Each marker contains a link that leads to the page telling
-                            the story of the street's eponym (opens in a new tab).
-                            </p>
-                        <p class="pb-2.5 text-xl">
-                            <b>NB:</b> These are only the streets whose entries are complete. As explained <a href="http://localhost:3000/about">here</a>, 
-                            the website is being continuously updated!
-                        </p>
                         <div className="landing" class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14">
                             <MapContainer
                                 center={[52.5170124, 13.389094]}
@@ -99,6 +88,14 @@ export default function Map() {
                                 ))}
                             </MapContainer>
                         </div>
+                        <p class="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
+                            Here's a topographic representation of the Berlin streets named after women. Each marker contains a link that leads to the page telling
+                            the story of the street's eponym (opens in a new tab).
+                            </p>
+                        <p class="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
+                            <b>NB:</b> These are only the streets whose entries are complete. As explained <a href="http://localhost:3000/about">here</a>, 
+                            the website is being continuously updated!
+                        </p>
                     </div>
 
                 </div>
