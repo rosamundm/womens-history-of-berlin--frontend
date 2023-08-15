@@ -42,12 +42,18 @@ export default function Map() {
     if (!mapStreets) {
 
         return (
-            <div class="p-8 bg-violet-300">
-                <div class="p-6 text-3xl font-serif">
-                    Loading data...
+            <div class="container p-8 bg-slate-100">
+                <div class="p-6 text-3xl">
+                    Loading map data...
+                    <div class="py-3 text-xl">
+                      If it takes too long, please try again or check that the URL is valid.
+                    </div>
+                </div>
+                <div>
+                    <Footer/>
                 </div>
             </div>
-        )
+        );
 
     } else {
 
