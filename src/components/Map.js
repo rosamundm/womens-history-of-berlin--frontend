@@ -56,7 +56,6 @@ export default function Map() {
             <div class="container p-8 py-1 bg-slate-100">
 
                 <div class="p-6 bg-sky-100">
-
                     <div class="p-5 px-2.5">
                         <div class="text-4xl py-4">
                             Map
@@ -98,7 +97,9 @@ export default function Map() {
 
                 </div>
 
-                <Footer/>
+                <div>
+                    <Footer/>
+                </div>
 
             </div>
 
