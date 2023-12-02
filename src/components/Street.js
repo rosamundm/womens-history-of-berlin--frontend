@@ -102,22 +102,25 @@ export default function StreetInstance() {
 
                 <div className="eponym-description" class="p-4 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify">
                   {parsedStreetDescription}
-                </div>
+                </div>                
 
                 <div class="p-4">
-
                   <div class="text-xl">
-                    <b>Tagged</b> {" "}
+
                     {streetInstance.data.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                      >
-                        <Link to={`/tags/${tag}`}>
-                          {tag}, {" "}
-                        </Link>
-                      </span>
+                      tag == "[]" ? (
+                        <span>{" "}</span>  
+                    ): <div class="text-xl">
+                            <b>Tagged</b> {" "}
+                              <span key={tag}>
+                                <Link to={`/tags/${tag}`}>
+                                  {tag} {" "}
+                                </Link>
+                              </span>
+                        </div>
                     ))}
-                    </div>
+                  
+                  </div>
                 </div>
 
               </div>
