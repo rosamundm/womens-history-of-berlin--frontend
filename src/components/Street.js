@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import parse from 'html-react-parser';
 import Footer from "./layout/Footer";
+import { toHaveErrorMessage } from "@testing-library/jest-dom/dist/matchers";
 
 export default function StreetInstance() {
 
@@ -101,6 +102,22 @@ export default function StreetInstance() {
 
                 <div className="eponym-description" class="p-4 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify">
                   {parsedStreetDescription}
+                </div>
+
+                <div class="p-4">
+
+                  <div class="text-xl">
+                    <b>Tagged</b> {" "}
+                    {streetInstance.data.tags.map((tag) => (
+                      <span 
+                        key={tag}
+                      >
+                        <Link to={`/tags/${tag}`}>
+                          {tag}, {" "}
+                        </Link>
+                      </span>
+                    ))}
+                    </div>
                 </div>
 
               </div>
