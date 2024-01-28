@@ -61,7 +61,7 @@ export default function Map() {
         return (
 
             <div class="container p-8 py-1 bg-white">
-                <div class="p-6 bg-sky-100 rounded-lg">
+                <div class="p-6 bg-violet-100 rounded-lg">
                     <div class="p-5 px-2.5">
                     <HomepageHeader />
                         <div className="landing" class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14">

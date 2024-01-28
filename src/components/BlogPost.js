@@ -46,9 +46,9 @@ export default function BlogPostInstance() {
 
         <div class="container p-8 bg-white">
 
-          <div className="post-detail" class="p-6 bg-sky-100 rounded-lg">
+          <div className="post-detail" class="p-6 bg-violet-100 rounded-lg">
 
-              <div class="sm:p-2.5 md:p-5 lg:p-5 bg-sky-100">
+              <div class="sm:p-2.5 md:p-5 lg:p-5 bg-violet-100">
 
                 <div class="text-4xl">
                     {postInstance.data.title}
