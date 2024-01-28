@@ -35,7 +35,7 @@ export default function TagList() {
 
             <div class="container p-8 bg-white">
 
-                <div className="post-detail" class="p-6 bg-sky-100 rounded-lg">
+                <div className="post-detail" class="p-6 bg-violet-100 rounded-lg">
 
                     <div class="p-6 text-4xl">
                         Explore by tag
