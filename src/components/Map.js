@@ -95,7 +95,7 @@ export default function Map() {
                             </p>
                         <p class="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
                             <b>NB:</b> These are only the streets whose entries are complete. As explained <a href="http://named-after-women.berlin/about">here</a>, 
-                            the website is being continuously updated!
+                            the archive is being continuously updated!
                         </p>
                     </div>
 
