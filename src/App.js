@@ -22,8 +22,6 @@ export default function App() {
 
                 <Route path="/" element={<Map/>}/>
 
-                {/* <Route path="/districts" element={<DistrictBrowser/>}/> */}
-                {/* <Route path="/districts/:district_slug" element={<DistrictInstance/>}/> */}
                 <Route path="/streets/:street_slug" element={<StreetInstance/>}/>
                 <Route path="/tags" element={<TagList/>}/>
                 <Route path="/tags/:slug" element={<TagInstance/>}/>
