@@ -25,6 +25,8 @@ export default function DistrictInstance() {
         
     }, [districtSlug]);
 
+    console.log(districtInstance.data.streets)
+
     if (!districtInstance) {
 
         return (
