@@ -62,7 +62,8 @@ export default function StreetInstance() {
                 <div class="text-4xl">
                   <a href={streetInstance.data.map_link} class="font-bold">
                     {streetInstance.data.name} {" "}
-                  </a> 
+                  </a>
+                  in <b>{streetInstance.data.district}</b> {" "}
                   is named after {" "}
                   <span class="font-extrabold">
                     {streetInstance.data.eponym_name}
