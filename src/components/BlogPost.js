@@ -26,7 +26,7 @@ export default function BlogPostInstance() {
 
     if (!postInstance) {
       return (
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
             <div class="p-6 text-3xl">
                 Loading post...
                 <div class="py-3 text-xl">
@@ -44,9 +44,9 @@ export default function BlogPostInstance() {
 
     return (
 
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
 
-          <div className="post-detail" class="p-6 bg-sky-100">
+          <div className="post-detail" class="p-6 bg-sky-100 rounded-lg">
 
               <div class="sm:p-2.5 md:p-5 lg:p-5 bg-sky-100">
 
@@ -66,12 +66,6 @@ export default function BlogPostInstance() {
    
           </div>
             
-          <div class="p-6">
-            <Link to={"/news/"}>
-                Back to blog
-            </Link>
-          </div>
-
           <div>
             <Footer/>
           </div>

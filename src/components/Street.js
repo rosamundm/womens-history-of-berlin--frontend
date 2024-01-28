@@ -28,7 +28,7 @@ export default function StreetInstance() {
 
     if (!streetInstance) {
       return (
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
             <div class="p-6 text-3xl">
                 Loading details for this street...
                 <div class="py-3 text-xl">
@@ -47,9 +47,9 @@ export default function StreetInstance() {
 
     return (
 
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
 
-          <div className="street-detail" class="p-6 bg-sky-100">
+          <div className="street-detail" class="p-6 bg-sky-100 rounded-lg">
 
               <div className="street-image">
                 <img
@@ -111,7 +111,7 @@ export default function StreetInstance() {
                   <b>Tagged:</b>
                     {streetInstance.data.tags.map((tag) => (
                       tag == "[]" ? (
-                        <span>{" "}</span>  
+                        <span>{" "} No tags yet</span>  
                     ): <div class="text-xl">
                           <span key={tag}>
                             <Link to={`/tags/${tag}`}>
@@ -126,12 +126,6 @@ export default function StreetInstance() {
 
               </div>
    
-          </div>
-            
-          <div className="back-to-list" class="p-2 bg-violet-300 text-xl">
-            <Link to={`/`}>
-               Back to map
-            </Link>
           </div>
 
           <div>
