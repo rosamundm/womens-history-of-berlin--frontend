@@ -26,7 +26,7 @@ export default function TagInstance() {
 
     if (!tagInstance) {
       return (
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
             <div class="p-6 text-3xl">
                 Loading tag...
                 <div class="py-3 text-xl">
@@ -42,9 +42,9 @@ export default function TagInstance() {
 
     return (
 
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
 
-          <div className="post-detail" class="p-6 bg-sky-100">
+          <div className="post-detail" class="p-6 bg-sky-100 rounded-lg">
 
               <div class="sm:p-2.5 md:p-5 lg:p-5 bg-sky-100">
 
@@ -65,18 +65,14 @@ export default function TagInstance() {
                     ))}
                 </div>
 
+              </div>
 
-
-
-
+              <div className="back-to-list" class="p-2 bg-violet-300 text-xl rounded-lg">
+                <Link to={"/tags/"}>
+                  Back to tags
+                </Link>
               </div>
    
-          </div>
-            
-          <div className="back-to-list" class="p-2 bg-violet-300 text-xl">
-            <Link to={"/tags/"}>
-                Back to tags
-            </Link>
           </div>
 
           <div>

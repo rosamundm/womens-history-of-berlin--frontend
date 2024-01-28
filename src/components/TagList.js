@@ -33,33 +33,31 @@ export default function TagList() {
 
         return (
 
-            <div class="container p-8 bg-slate-100">
+            <div class="container p-8 bg-white">
 
-                <div class="p-6 text-4xl">
-                    Explore by tag
-                </div>
+                <div className="post-detail" class="p-6 bg-sky-100 rounded-lg">
+
+                    <div class="p-6 text-4xl">
+                        Explore by tag
+                    </div>
              
-                <div className="street-list" class="p-8">
+                    <div className="street-list" class="p-8">
 
-                    {tags.data.map((tag) => (
+                        {tags.data.map((tag) => (
 
-                        <div 
-                            className="text-2xl p-3"
-                            key={tag.name} onClick={() => setSelectedTag(tag)}>
-                            <Link to={`/tags/${tag.slug}/`}>
-                                {tag.name}
-                            </Link>
+                            <div 
+                                className="text-2xl p-3"
+                                key={tag.name} onClick={() => setSelectedTag(tag)}>
+                                <Link to={`/tags/${tag.slug}/`}>
+                                    {tag.name}
+                                </Link>
                             
-                        </div>
+                            </div>
 
-                    ))}
+                        ))}
 
-                </div>
+                    </div>
 
-                <div className="back-to-list" class="p-2 bg-violet-300 text-xl">
-                    <Link to={`/`}>
-                        Back to map
-                    </Link>
                 </div>
 
                 <div>

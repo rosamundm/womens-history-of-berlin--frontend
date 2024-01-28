@@ -4,9 +4,9 @@ import Footer from "../layout/Footer";
 export default function AboutPage() {
 
     return (
-        <div class="container p-8 bg-slate-100">
+        <div class="container p-8 bg-white">
 
-          <div class="p-6 bg-sky-100">
+          <div class="p-6 bg-sky-100 rounded-lg">
 
               <div className="eponym-basic-info" class="sm:p-2.5 md:p-5 lg:p-5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify bg-sky-100">
 
