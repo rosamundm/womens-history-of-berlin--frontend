@@ -11,13 +11,8 @@ function Footer() {
         </span>
         <ul class="flex flex-wrap mt-3 text-sm font-medium text-gray-500 sm:mt-0">
           <li>
-            <Link to="/map" class="mr-4 hover:underline md:mr-6">
+            <Link to="/" class="mr-4 hover:underline md:mr-6">
               Map
-            </Link>
-          </li>
-          <li>
-            <Link to="/districts" class="mr-4 hover:underline md:mr-6">
-              District Grid
             </Link>
           </li>
           <li>
@@ -31,6 +26,11 @@ function Footer() {
             </Link>
           </li>
           <li>
+            <Link to="/news" class="mr-4 hover:underline md:mr-6">
+              News
+            </Link>
+          </li>
+          <li>
             <Link to="/contact" class="mr-4 hover:underline md:mr-6">
               Contact
             </Link>
@@ -38,16 +38,6 @@ function Footer() {
           <li>
             <Link to="/impressum" class="mr-4 hover:underline md:mr-6">
               Impressum
-            </Link>
-          </li>
-          <li>
-            <Link to="/news" class="mr-4 hover:underline md:mr-6">
-              News
-            </Link>
-          </li>
-          <li>
-            <Link to="/credits" class="mr-4 hover:underline md:mr-6">
-              Photo Credits
             </Link>
           </li>
       </ul>

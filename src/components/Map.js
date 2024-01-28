@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import HomepageHeader from "./layout/HomepageHeader";
 import Footer from "./layout/Footer";
 
 function getMapCenter() {
@@ -60,9 +61,9 @@ export default function Map() {
         return (
 
             <div class="container p-8 py-1 bg-slate-100">
-
                 <div class="p-6 bg-sky-100">
                     <div class="p-5 px-2.5">
+                    <HomepageHeader />
                         <div className="landing" class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14">
                             <MapContainer
                                 center={[52.5170124, 13.389094]}
