@@ -18,7 +18,7 @@ export default function Map() {
                         Markers: Prosymbols Premium (Flaticon)"
 
     const customIcon = new Icon({
-        iconUrl: require("../location-pin.png"),
+        iconUrl: require("../assets/green-location-pin.png"),
         iconSize: [38, 38]
     })
 
