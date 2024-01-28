@@ -107,16 +107,16 @@ export default function StreetInstance() {
                 <div class="p-4">
                   <div class="text-xl">
 
+                  <b>Tagged:</b>
                     {streetInstance.data.tags.map((tag) => (
                       tag == "[]" ? (
                         <span>{" "}</span>  
                     ): <div class="text-xl">
-                            <b>Tagged</b> {" "}
-                              <span key={tag}>
-                                <Link to={`/tags/${tag}`}>
-                                  {tag} {" "}
-                                </Link>
-                              </span>
+                          <span key={tag}>
+                            <Link to={`/tags/${tag}`}>
+                              {tag}
+                            </Link>
+                          </span>
                         </div>
                     ))}
                   
@@ -128,8 +128,8 @@ export default function StreetInstance() {
           </div>
             
           <div className="back-to-list" class="p-2 bg-violet-300 text-xl">
-            <Link to={`/districts/${streetInstance.data.district_slug}`}>
-               See more streets in {streetInstance.data.district}
+            <Link to={`/`}>
+               Back to map
             </Link>
           </div>
 

@@ -56,6 +56,12 @@ export default function TagList() {
 
                 </div>
 
+                <div className="back-to-list" class="p-2 bg-violet-300 text-xl">
+                    <Link to={`/`}>
+                        Back to map
+                    </Link>
+                </div>
+
                 <div>
                     <Footer/>
                 </div>

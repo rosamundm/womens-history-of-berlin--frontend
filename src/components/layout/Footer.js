@@ -11,11 +11,6 @@ function Footer() {
         </span>
         <ul class="flex flex-wrap mt-3 text-sm font-medium text-gray-500 sm:mt-0">
           <li>
-            <Link to="/" class="mr-4 hover:underline md:mr-6">
-              Map
-            </Link>
-          </li>
-          <li>
             <Link to="/about" class="mr-4 hover:underline md:mr-6">
               About
             </Link>
