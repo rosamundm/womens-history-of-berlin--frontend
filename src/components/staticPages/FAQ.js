@@ -28,11 +28,12 @@ export default function FaqPage() {
                     </p>
                     <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
                         Furthermore, most of these empresses and suchlike were part of the Hohenzollern dynasty, which was responsible 
-                        for colonial crimes that Germany still does not adequately acknowledge, like the <a href="https://www.dw.com/en/herero-and-nama-dispute-genocide-agreement-with-germany/a-64476907">genocide of the Herero and the Namaqua</a>.
+                        for colonial crimes that — in my opinion — Germany has not adequately atoned for yet, like 
+                        the <a href="https://www.hrw.org/news/2023/03/30/namibian-communities-deserve-say-german-reparations-deal">genocide of the 
+                        Herero and the Namaqua</a>.
                     </p>
                     <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-                        For the people I do profile, hopefully it goes without saying that I don't necessarily agree with every single thing they stood for.
-                        Don't @ me about deliberately leaving out people I'm not particularly interested in researching. My website, my rules 🤠
+                        For the people I <i>do</i> profile, hopefully it goes without saying that I don't necessarily agree with every single thing they stood for.
                     </p>
                     <div class="text-4xl py-4">
                         I see a street missing. Shall I point this out to you?
