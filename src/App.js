@@ -10,6 +10,7 @@ import FaqPage from "./components/staticPages/FAQ.js";
 import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
 import TagList from "./components/TagList.js";
 import TagInstance from "./components/Tag.js";
+import Homepage from "./components/layout/Homepage.js";
 
 export default function App() {
 
@@ -20,7 +21,7 @@ export default function App() {
             <Router>
               <Routes>
 
-                <Route path="/" element={<Map/>}/>
+                <Route path="/" element={<Homepage/>}/>
 
                 <Route path="/streets/:street_slug" element={<StreetInstance/>}/>
                 <Route path="/tags" element={<TagList/>}/>

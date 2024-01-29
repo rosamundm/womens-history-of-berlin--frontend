@@ -4,8 +4,6 @@ import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import HomepageHeader from "./layout/HomepageHeader";
-import Footer from "./layout/Footer";
 
 function getMapCenter() {
     const map = useMap()
@@ -37,76 +35,48 @@ export default function Map() {
 
     }, []);
 
-    console.log(typeof mapStreets)
-
-
     if (!mapStreets) {
 
         return (
-            <div class="container p-8 bg-white">
                 <div class="p-6 text-3xl">
                     Loading map data...
                     <div class="py-3 text-xl">
                       If it takes too long, please try again or check that the URL is valid.
                     </div>
                 </div>
-                <div>
-                    <Footer/>
-                </div>
-            </div>
         );
 
     } else {
 
         return (
+        
+                <div className="landing" class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14">
+                    <MapContainer
+                        center={[52.5170124, 13.389094]}
+                        zoom={10}
+                        style={{ height: "100vh", width: "100%" }}
+                    >
+                    <getMapCenter />
+                    <TileLayer
+                        attribution={attribution}
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
 
-            <div class="container p-8 py-1 bg-white">
-                <div class="p-6 bg-violet-100 rounded-lg">
-                    <div class="p-5 px-2.5">
-                    <HomepageHeader />
-                        <div className="landing" class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14">
-                            <MapContainer
-                                center={[52.5170124, 13.389094]}
-                                zoom={10}
-                                style={{ height: "100vh", width: "100%" }}
-                            >
-                            <getMapCenter />
-                            <TileLayer
-                                attribution={attribution}
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-
-                                {mapStreets.data.map(mapStreet => (
-                                    <Marker position={mapStreet.geocode} icon={customIcon}>
-                                        <Popup>
-                                            <Link
-                                                target="_blank"
-                                                to={`/streets/${mapStreet.street_slug}`}>
-                                                    {mapStreet.name}
-                                            </Link>
-                                        </Popup>
-                                    </Marker>
-                                ))}
-                            </MapContainer>
-                        </div>
-                        <p class="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
-                            Here's a topographic representation of the Berlin streets named after women. Each marker contains a link that leads to the page telling
-                            the story of the street's eponym (opens in a new tab).
-                            </p>
-                        <p class="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
-                            <b>NB:</b> These are only the streets whose entries are complete. As explained <a href="http://named-after-women.berlin/about">here</a>, 
-                            the archive is being continuously updated!
-                        </p>
-                    </div>
-
+                        {mapStreets.data.map(mapStreet => (
+                            <Marker position={mapStreet.geocode} icon={customIcon}>
+                                <Popup>
+                                    <Link
+                                        target="_blank"
+                                        to={`/streets/${mapStreet.street_slug}`}
+                                    >
+                                            {mapStreet.name}
+                                    </Link>
+                                </Popup>
+                            </Marker>
+                        ))}
+                    </MapContainer>
                 </div>
-
-                <div>
-                    <Footer/>
-                </div>
-
-            </div>
-
+          
         )
     }
 };
