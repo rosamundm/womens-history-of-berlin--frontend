@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 
-function HomepageHeader() {
+
+export default function HomepageHeader() {
+
     return (
        <div class="p-5 py-10 bg-violet-200 rounded-lg shadow text-center">
         <div class="font-serif font-semibold text-6xl">
@@ -12,5 +13,3 @@ function HomepageHeader() {
        </div>
     )
 };
-
-export default HomepageHeader;

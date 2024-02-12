@@ -22,7 +22,7 @@ export default function BlogList() {
     if (posts.length === 0) {
 
         return (
-            <div class="p-8 bg-white">
+            <div class="container p-8 bg-white">
                 <div class="p-6 text-3xl font-serif">
                     Loading posts...
                 </div>

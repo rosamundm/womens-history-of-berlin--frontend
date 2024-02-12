@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import HomepageHeader from "./HomepageHeader";
 import Map from "../Map";
 
-function Homepage() {
+export default function Homepage() {
 
     return (
 
@@ -36,5 +36,3 @@ function Homepage() {
         </div>
     )
 };
-
-export default Homepage;
