@@ -11,7 +11,7 @@
 //       method: "GET",
 //       headers: {
 //         "Authorization": `JWT ${PROD_JWT_TOKEN}`,
-//         "Accept" : "application/json", 
+//         "Accept" : "application/json",
 //         "Content-Type": "application/json"
 //       }
 //     })
@@ -31,28 +31,26 @@
 //   return (
 //       <div className="flex items-center justify-center">
 //         <div className="flex border-2 rounded">
-//           <input 
-//             type="text" 
-//             className="px-4 py-2 w-80" 
+//           <input
+//             type="text"
+//             className="px-4 py-2 w-80"
 //             placeholder="Search by street"
 //             value={searchQuery}
 //             onChange={handleChange}
 //           >
 //           </input>
 
-
 //           <div>
 //             {data &&
 //               data.map((item) =>(
 //                 item.name.toLowerCase().slice(0,3) === searchQuery.slice(0,3)
-//                 ? 
-//                 <Link 
+//                 ?
+//                 <Link
 //                   to={`/districts/${item.district_slug}/${item.street_slug}`}>{item.name}
 //                 </Link>
 //                 : null
 //               ))
 //             }
-
 
 //           </div>
 //         </div>

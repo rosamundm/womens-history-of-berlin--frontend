@@ -13,31 +13,24 @@ import TagInstance from "./components/Tag.js";
 import Homepage from "./components/layout/Homepage.js";
 
 export default function App() {
+  return (
+    <main className="text-indigo-800 bg-[#FFFFFF] body-font min-h-screen flex items-center justify-center font-serif">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
 
-      return (
+          <Route path="/streets/:street_slug" element={<StreetInstance />} />
+          <Route path="/tags" element={<TagList />} />
+          <Route path="/tags/:slug" element={<TagInstance />} />
+          <Route path="/news" element={<BlogList />} />
+          <Route path="/news/:slug" element={<BlogPostInstance />} />
 
-          <main className="text-indigo-800 bg-[#FFFFFF] body-font min-h-screen flex items-center justify-center font-serif">
-
-            <Router>
-              <Routes>
-
-                <Route path="/" element={<Homepage/>}/>
-
-                <Route path="/streets/:street_slug" element={<StreetInstance/>}/>
-                <Route path="/tags" element={<TagList/>}/>
-                <Route path="/tags/:slug" element={<TagInstance/>}/>
-                <Route path="/news" element={<BlogList/>}/>
-                <Route path="/news/:slug" element={<BlogPostInstance/>}/>
-
-                <Route path="/about" element={<AboutPage/>}/>
-                <Route path="/contact" element={<ContactPage/>}/>
-                <Route path="/faq" element={<FaqPage/>}/>
-                <Route path="/impressum" element={<ImpressumDatenschutzPage/>}/>
-
-              </Routes>
-            </Router>
-              
-          </main>
-
-      )
-};
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/impressum" element={<ImpressumDatenschutzPage />} />
+        </Routes>
+      </Router>
+    </main>
+  );
+}
