@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-    a {
-       @apply text-blue-700 hover:bg-gray-50 md:hover:bg-transparent md:hover:text-blue-700 md:p-0;
-    };
-    div {
-        @apply selection:bg-violet-300 selection:text-white;
-    };
+  a {
+    @apply text-blue-700 hover:bg-gray-50 md:hover:bg-transparent md:hover:text-blue-700 md:p-0;
+  }
+  div {
+    @apply selection:bg-violet-300 selection:text-white;
+  }
 }
