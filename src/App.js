@@ -10,7 +10,7 @@ import FaqPage from "./components/staticPages/FAQ.js";
 // import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
 import TagList from "./components/TagList.js";
 import TagInstance from "./components/Tag.js";
-import Homepage from "./components/layout/Homepage.js";
+import Homepage from "./components/layout/Homepage";
 
 export default function App() {
   return (
