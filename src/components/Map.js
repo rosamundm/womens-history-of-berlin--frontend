@@ -5,7 +5,7 @@ import { Icon } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-function getMapCenter() {
+const getMapCenter = () => {
   const map = useMap();
   console.log(map.getCenter());
   return null;
@@ -16,8 +16,13 @@ export default function Map() {
     "<a href='https://www.openstreetmap.org/copyright'>© OpenStreetMap</a> | \
                         Markers: Prosymbols Premium (Flaticon)";
 
-  const customIcon = new Icon({
+  const customIconComplete = new Icon({
     iconUrl: require("../assets/green-location-pin.png"),
+    iconSize: [38, 38],
+  });
+
+  const customIconIncomplete = new Icon({
+    iconUrl: require("../assets/red-location-pin.png"),
     iconSize: [38, 38],
   });
 
@@ -58,15 +63,22 @@ export default function Map() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {mapStreets.data.map((mapStreet) => (
-            <Marker position={mapStreet.geocode} icon={customIcon}>
+          {mapStreets.data.length > 0 && mapStreets.data.map((mapStreet) => (
+            mapStreet.entry_complete ? ( 
+            <Marker position={mapStreet.geocode} icon={customIconComplete}>
               <Popup>
                 <Link target="_blank" to={`/streets/${mapStreet.street_slug}`}>
                   {mapStreet.name}
                 </Link>
               </Popup>
             </Marker>
-          ))}
+            ) : (
+            <Marker position={mapStreet.geocode} icon={customIconIncomplete}>
+              <Popup>
+                {mapStreet.name}
+              </Popup>
+            </Marker>
+          )))}
         </MapContainer>
       </div>
     );
