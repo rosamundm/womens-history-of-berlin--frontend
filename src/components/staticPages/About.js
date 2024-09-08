@@ -108,14 +108,6 @@ export default function AboutPage() {
                 view on the website.
               </li>
             </ul>
-
-            <p class="pb-2.5">
-              As you can see, this involves quite a lot of labour... and I
-              haven't even mentioned what goes into engineering the website
-              itself. So, if you appreciate my work and would like to show a
-              token of appreciation, you're welcome to{" "}
-              <a href="https://ko-fi.com/rosamund">buy me a coffee</a>.
-            </p>
           </div>
         </div>
       </div>

@@ -12,29 +12,16 @@ export default function FaqPage() {
           <div class="p-5 px-2.5">
             <div class="text-4xl py-4">
               There's a famous Berlin street named after a princess that I can't
-              find on here, for some reason. Why?
+              find on here. Why?
             </div>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
               Since there are so many such streets (among them Luisenstraße,
               Sophienstraße, and a surprising number of instances of
-              Kaiserin-Augusta-Straße), I have decided not to prioritise them
-              here. Here is why:
-            </p>
-            <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              In general, I prefer not to glorify nobility and instead would
-              like to focus my efforts on figures who earned their recognition.
-              I especially aim to honour those who were persecuted or killed for
-              some aspect of their beliefs or identity.
-            </p>
-            <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              Furthermore, most of these empresses and suchlike were part of the
-              Hohenzollern dynasty, which was responsible for colonial crimes
-              that — in my opinion — Germany has not adequately atoned for yet,
-              like the{" "}
-              <a href="https://www.hrw.org/news/2023/03/30/namibian-communities-deserve-say-german-reparations-deal">
-                genocide of the Herero and the Namaqua
-              </a>
-              .
+              Kaiserin-Augusta-Straße), and I have very limited time to work on this project, I 
+              have decided not to prioritise them. The reason is that in general, I prefer not 
+              to glorify nobility, and instead would like to focus my efforts on ordinary people 
+              who earned their recognition. I especially aim to honour those who were 
+              persecuted or killed for some aspect of their beliefs or identity.
             </p>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
               For the people I <i>do</i> profile, hopefully it goes without
@@ -54,10 +41,13 @@ export default function FaqPage() {
               point, or that no longer exist?
             </div>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              That's true, many of the people featured here were born in places
-              like Prussia. I decided early on in the project to refer to cities
-              as they are in the present day. For instance, what was then{" "}
-              <i>Schwiebus, Prussia</i> will be called <i>Świebodzin, Poland</i>{" "}
+              Hold on tight, this will be long...
+            </p>
+            <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
+              Many of the people featured here were born in places
+              like Prussia. The concept of a nation can be a complex one, but I decided early 
+              on in the project to refer to cities as they are in the present day. For instance,
+              what was then <i>Schwiebus, Prussia</i> will be called <i>Świebodzin, Poland</i>{" "}
               here — the modern country and endonym.
             </p>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
@@ -81,14 +71,12 @@ export default function FaqPage() {
               way.
             </p>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              If my logic is still a mystery: take as an example the fact that
-              many Ukrainians are asking the world to refer to their capital
-              city as <i>Kyiv</i> (Ukrainian transliteration) and not{" "}
-              <i>Kiev</i> (Russian transliteration) outside of those respective
-              languages. Although both languages are widely spoken in Ukraine,
-              they want the official language — the one that's unique to their
-              culture, which in turn has centuries of ongoing history of being
-              repressed by the other culture — to take precedent.
+              To take a current example: many Ukrainians, if not most, are asking 
+              the world to refer to their capital city as <i>Kyiv</i> (Ukrainian transliteration) 
+              and not <i>Kiev</i> (Russian transliteration). Although both languages
+              are widely spoken in Ukraine, the official language — the one that's 
+              unique to this culture, which in turn has centuries of ongoing history of being
+              repressed by the other culture — takes precedent.
             </p>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
               The concept of a nation can be a complex one, but if you're that
@@ -99,11 +87,11 @@ export default function FaqPage() {
               What about non-binary or genderfluid people?
             </div>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              In light of the political climate in the US and elsewhere, I want
+              In light of the political climate, I want
               to make it crystal clear that I fully support you.
             </p>
             <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              As much as I dislike adhering to a gender binary in my work, as
+              As much as I would prefer not adhering to a gender binary in my work, as
               far as I'm aware, none of the figures I've read about so far have
               been anything other than cis women (on that note, I'll add that if
               I do come across any trans women, they will obviously be treated
@@ -114,10 +102,6 @@ export default function FaqPage() {
               case, I guess I would rename the project. If you have any ideas
               for names that open the project up to gender-expansiveness, get in
               touch.
-            </p>
-            <div class="text-4xl py-4">This is sexist!</div>
-            <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              No.
             </p>
           </div>
         </div>
