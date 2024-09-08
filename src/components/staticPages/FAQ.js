@@ -78,11 +78,6 @@ export default function FaqPage() {
               unique to this culture, which in turn has centuries of ongoing history of being
               repressed by the other culture — takes precedent.
             </p>
-            <p class="pb-2.5 sm:text-left md:text-justify lg:text-justify">
-              The concept of a nation can be a complex one, but if you're that
-              interested in the history of a place where a certain figure died
-              or was born, the internet is your oyster.
-            </p>
             <div class="text-4xl py-4">
               What about non-binary or genderfluid people?
             </div>
