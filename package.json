@@ -9,6 +9,8 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "axios": "^0.28.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -17,7 +19,7 @@
     "html-react-parser": "^3.0.4",
     "http-proxy-middleware": "^2.0.6",
     "leaflet": "^1.9.4",
-    "netlify-lambda": "^2.0.15",
+    "netlify-cli": "^10.14.0",
     "nodemon": "^2.0.20",
     "nth-check": "^2.0.1",
     "postcss": "^8.4.31",
@@ -26,17 +28,23 @@
     "react-dropdown": "^1.10.0",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "^5.0.0",
+    "vite": "^5.4.3",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^5.0.1",
     "web-vitals": "^1.1.2",
     "webpack-dev-middleware": "^5.3.4"
   },
   "scripts": {
+
+    "start": "vite",
+    "netlify": "netlify dev",
+    "build": "vite build",
+
+
+
+
     "start:backend": "nodemon .netlify/functions/server.js",
-    "start:frontend": "react-scripts start",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start:frontend": "vite",
     "start:lambda": "netlify-lambda serve src/api",
     "build:lambda": "netlify-lambda build src/api"
   },

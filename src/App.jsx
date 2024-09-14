@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BlogList from "./components/BlogList.js";
-import BlogPostInstance from "./components/BlogPost.js";
-import Map from "./components/Map.js";
-import StreetInstance from "./components/Street.js";
-import AboutPage from "./components/staticPages/About.js";
-import ContactPage from "./components/staticPages/Contact.js";
-import FaqPage from "./components/staticPages/FAQ.js";
+import BlogList from "./components/BlogList.jsx";
+import BlogPostInstance from "./components/BlogPost.jsx";
+import StreetInstance from "./components/Street.jsx";
+import AboutPage from "./components/staticPages/About.jsx";
+import ContactPage from "./components/staticPages/Contact.jsx";
+import FaqPage from "./components/staticPages/FAQ.jsx";
 // import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
-import TagList from "./components/TagList.js";
-import TagInstance from "./components/Tag.js";
-import Homepage from "./components/layout/Homepage.js";
+import TagList from "./components/TagList.jsx";
+import TagInstance from "./components/Tag.jsx";
+import Homepage from "./components/layout/Homepage.jsx";
 
 export default function App() {
   return (
