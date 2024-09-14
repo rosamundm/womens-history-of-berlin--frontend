@@ -4,6 +4,11 @@ import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import GreenPin from "../assets/green-location-pin.png"
+// import resolveConfig from 'tailwindcss/resolveConfig'
+// import tailwindConfig from '../../tailwind.config.js'
+
+// const tailwindConfig = require('tailwind.config.js')
 
 const getMapCenter = () => {
   const map = useMap();
@@ -11,20 +16,29 @@ const getMapCenter = () => {
   return null;
 }
 
+// const fullConfig = resolveConfig(tailwindConfig)
+// const lg = fullConfig.theme.screens.lg
+// console.log(lg)
+
+const getMapZoom = () => {
+
+}
+
+
 export default function Map() {
   const attribution =
     "<a href='https://www.openstreetmap.org/copyright'>© OpenStreetMap</a> | \
                         Markers: Prosymbols Premium (Flaticon)";
 
-  const customIconComplete = new Icon({
-    iconUrl: require("../assets/green-location-pin.png"),
-    iconSize: [38, 38],
-  });
+  // const customIconComplete = new Icon({
+  //   iconUrl: require("../assets/green-location-pin.png"),
+  //   iconSize: [38, 38],
+  // });
 
-  const customIconIncomplete = new Icon({
-    iconUrl: require("../assets/red-location-pin.png"),
-    iconSize: [38, 38],
-  });
+  // const customIconIncomplete = new Icon({
+  //   iconUrl: require("../assets/red-location-pin.png"),
+  //   iconSize: [38, 38],
+  // });
 
   const [mapStreets, setMapStreets] = useState(null);
 
@@ -33,6 +47,7 @@ export default function Map() {
       const response = await fetch("/.netlify/functions/get-street-list", {
         method: "GET",
       }).then((response) => response.json());
+      console.log("response", response)
       setMapStreets(response);
     })();
   }, []);
@@ -50,11 +65,11 @@ export default function Map() {
     return (
       <div
         className="landing"
-        class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14"
+        class="px-500 justify-center justify-items-cewnter lg:max-w-6xl m-auto py-8 sm:py-14 md:py-14"
       >
-        <MapContainer
+        {/* <MapContainer
           center={[52.5170124, 13.389094]}
-          zoom={10}
+          zoom={11}
           style={{ height: "100vh", width: "100%" }}
         >
           <getMapCenter />
@@ -79,7 +94,7 @@ export default function Map() {
               </Popup>
             </Marker>
           )))}
-        </MapContainer>
+        </MapContainer> */}
       </div>
     );
   }
