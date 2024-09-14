@@ -6,10 +6,10 @@ exports.handler = async () => {
 
   try {
     response = await axios.get(
-      `${process.env.REACT_APP_PROD_API_URL}/districts`,
+      `${import.meta.env.VITE_APP_PROD_API_URL}/districts`,
       {
         headers: {
-          Authorization: `JWT ${process.env.REACT_APP_PROD_JWT_TOKEN}`,
+          Authorization: `JWT ${import.meta.env.VITE_APP_PROD_JWT_TOKEN}`,
           Accept: "application/json",
           "Content-Type": "application/json",
         },

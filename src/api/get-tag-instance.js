@@ -8,10 +8,10 @@ exports.handler = async (event) => {
 
   try {
     response = await axios.get(
-      `${process.env.REACT_APP_PROD_API_URL}/tags/${slug}`,
+      `${import.meta.env.VITE_APP_PROD_API_URL}/tags/${slug}`,
       {
         headers: {
-          Authorization: `JWT ${process.env.REACT_APP_PROD_JWT_TOKEN}`,
+          Authorization: `JWT ${import.meta.env.VITE_APP_PROD_JWT_TOKEN}`,
           Accept: "application/json",
           "Content-Type": "application/json",
         },
