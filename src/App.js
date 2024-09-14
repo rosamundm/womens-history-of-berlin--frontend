@@ -2,10 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList.js";
 import BlogPostInstance from "./components/BlogPost.js";
-import Map from "./components/Map.js";
 import StreetInstance from "./components/Street.js";
 import AboutPage from "./components/staticPages/About.js";
-import ContactPage from "./components/staticPages/Contact.js";
 import FaqPage from "./components/staticPages/FAQ.js";
 import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
 import TagList from "./components/TagList.js";
@@ -26,7 +24,6 @@ export default function App() {
           <Route path="/news/:slug" element={<BlogPostInstance />} />
 
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/impressum" element={<ImpressumDatenschutzPage />} />
         </Routes>

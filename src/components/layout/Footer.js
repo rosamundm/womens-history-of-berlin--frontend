@@ -30,11 +30,6 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <Link to="/contact" class="mr-4 hover:underline md:mr-6">
-              Contact
-            </Link>
-          </li>
-          <li>
             <Link to="/impressum" class="mr-4 hover:underline md:mr-6">
               Impressum
             </Link>
