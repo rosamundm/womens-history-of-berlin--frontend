@@ -50,11 +50,11 @@ export default function Map() {
     return (
       <div
         className="landing"
-        class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14"
+        class="px-500 justify-center justify-items-center lg:max-w-6xl m-auto py-8 sm:py-14 md:py-14"
       >
         <MapContainer
           center={[52.5170124, 13.389094]}
-          zoom={10}
+          zoom={11}
           style={{ height: "100vh", width: "100%" }}
         >
           <getMapCenter />
