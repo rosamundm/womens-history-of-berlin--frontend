@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList.js";
 import BlogPostInstance from "./components/BlogPost.js";
-import Map from "./components/Map.js";
+import Map from "./components/Map";
 import StreetInstance from "./components/Street.js";
 import AboutPage from "./components/staticPages/About.js";
 import ContactPage from "./components/staticPages/Contact.js";

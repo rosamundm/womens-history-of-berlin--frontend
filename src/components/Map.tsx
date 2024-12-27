@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 
 import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
@@ -21,8 +21,13 @@ const Map: FC = () => {
     "<a href='https://www.openstreetmap.org/copyright'>© OpenStreetMap</a> | \
                         Markers: Prosymbols Premium (Flaticon)";
 
-  const customIcon = new Icon({
+  const customIconComplete = new Icon({
     iconUrl: require("../assets/green-location-pin.png"),
+    iconSize: [38, 38],
+  });
+
+  const customIconIncomplete = new Icon({
+    iconUrl: require("../assets/red-location-pin.png"),
     iconSize: [38, 38],
   });
 
@@ -30,7 +35,7 @@ const Map: FC = () => {
 
   const getMapStreets = async () => {
     try {
-      const response = await axios.get(`http://localhost:${devFunctionsPort}/.netlify/functions/get-street-list`);
+      const response = await axios.get("http://localhost:5555/.netlify/functions/get-street-list");
       setMapStreets(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -42,8 +47,7 @@ const Map: FC = () => {
   }, []);
 
   console.log("streets:", mapStreets)
-  mapStreets.data.map((street: Street) => console.log(street.name))
-
+  mapStreets.data?.map((street: Street) => console.log(street.name))
 
   if (!mapStreets) {
     return (
@@ -62,7 +66,7 @@ const Map: FC = () => {
       >
         <MapContainer
           center={[52.5170124, 13.389094]}
-          zoom={10}
+          zoom={11}
           style={{ height: "100vh", width: "100%" }}
         >
           <getMapCenter />
@@ -71,15 +75,22 @@ const Map: FC = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {mapStreets.data.map((mapStreet: Street) => (
-            <Marker position={mapStreet.geocode} icon={customIcon}>
+          {mapStreets.data && mapStreets.data.map((mapStreet) => (
+            mapStreet.entry_complete ? ( 
+            <Marker position={mapStreet.geocode} icon={customIconComplete}>
               <Popup>
                 <Link target="_blank" to={`/streets/${mapStreet.street_slug}`}>
                   {mapStreet.name}
                 </Link>
               </Popup>
             </Marker>
-          ))}
+            ) : (
+            <Marker position={mapStreet.geocode} icon={customIconIncomplete}>
+              <Popup>
+                {mapStreet.name}
+              </Popup>
+            </Marker>
+          )))}
         </MapContainer>
       </div>
     );
