@@ -1,17 +1,22 @@
-import { useEffect, useState } from "react";
+// @ts-nocheck
+
+import axios from 'axios';
+import { FC, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
+import { Icon, map } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Street, StreetList } from '../types';
 
-function getMapCenter() {
+const getMapCenter = () => {
   const map = useMap();
   console.log(map.getCenter());
   return null;
 }
 
-export default function Map() {
+const Map: FC = () => {
+
   const attribution =
     "<a href='https://www.openstreetmap.org/copyright'>© OpenStreetMap</a> | \
                         Markers: Prosymbols Premium (Flaticon)";
@@ -21,16 +26,24 @@ export default function Map() {
     iconSize: [38, 38],
   });
 
-  const [mapStreets, setMapStreets] = useState(null);
+  const [mapStreets, setMapStreets] = useState<StreetList>([]);
+
+  const getMapStreets = async () => {
+    try {
+      const response = await axios.get(`http://localhost:${devFunctionsPort}/.netlify/functions/get-street-list`);
+      setMapStreets(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
-    (async () => {
-      const response = await fetch("/.netlify/functions/get-street-list", {
-        method: "GET",
-      }).then((response) => response.json());
-      setMapStreets(response);
-    })();
+    getMapStreets();
   }, []);
+
+  console.log("streets:", mapStreets)
+  mapStreets.data.map((street: Street) => console.log(street.name))
+
 
   if (!mapStreets) {
     return (
@@ -58,7 +71,7 @@ export default function Map() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {mapStreets.data.map((mapStreet) => (
+          {mapStreets.data.map((mapStreet: Street) => (
             <Marker position={mapStreet.geocode} icon={customIcon}>
               <Popup>
                 <Link target="_blank" to={`/streets/${mapStreet.street_slug}`}>
@@ -72,3 +85,5 @@ export default function Map() {
     );
   }
 }
+
+export default Map;

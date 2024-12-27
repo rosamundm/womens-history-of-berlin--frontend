@@ -1,3 +1,6 @@
+[dev]
+functionsPort = 5555
+
 [build]
 publish = "build/"
 functions = "src/api"
@@ -6,9 +9,6 @@ functions = "src/api"
 from = "/*"
 to = "/.netlify/functions/:splat"
 status = 200
-
-[functions]
-node_bundler = "esbuild"
 
 [[headers]]
   for = "/*"

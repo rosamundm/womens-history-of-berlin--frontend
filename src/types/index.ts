@@ -5,11 +5,13 @@ export type District = {
 };
 
 export type Street = {
-  name: string;
-  streetSlug: string;
-  district: District;
+  // todo: add optional fields
+  name: string,
+  streetSlug: string,
+  district: District,
   image: string,
-  tags: Tag[];
+  tags: Tag[],
+  geocode: number[]
 };
 
 export type Tag = {
@@ -17,3 +19,8 @@ export type Tag = {
   slug: string;
   streets: Street[];
 };
+
+export type StreetList = Street[];
+
+export type TagList = Tag[];
+

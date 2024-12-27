@@ -33,6 +33,10 @@ exports.handler = async () => {
     };
   }
 
+  // console.log(JSON.stringify({
+  //   data: response.data,
+  // }))
+
   return {
     statusCode: 200,
     body: JSON.stringify({

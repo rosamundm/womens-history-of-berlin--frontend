@@ -1,9 +1,11 @@
-import React from 'react'
+// @ts-nocheck
+
+import React, { FC } from 'react'
 import Footer from "./Footer";
 import HomepageHeader from "./HomepageHeader";
 import Map from "../Map";
 
-export default function Homepage() {
+const Homepage: FC = () => {
   return (
     <div className="container p-8 py-1 bg-white">
       <div className="p-6 bg-violet-100 rounded-lg">
@@ -33,3 +35,5 @@ export default function Homepage() {
     </div>
   );
 }
+
+export default Homepage;
