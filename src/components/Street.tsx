@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from 'axios';
 import parse from "html-react-parser";
 import Footer from "./layout/Footer";
-import { toHaveErrorMessage } from "@testing-library/jest-dom/dist/matchers";
+import { Street } from "../types";
 
 export default function StreetInstance() {
   let { street_slug } = useParams();
   const streetSlug = street_slug;
-  const [streetInstance, setStreetInstance] = useState(null);
+  const [streetInstance, setStreetInstance] = useState<Street>(null);
+
+  const getStreet = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5555/.netlify/functions/get-street-instance?slug=${streetSlug}`);
+      setStreetInstance(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
-    if (!streetSlug) {
-      return;
-    }
-
-    (async () => {
-      const response = await fetch(
-        `/.netlify/functions/get-street-instance?slug=${streetSlug}`,
-        { method: "GET" },
-      ).then((response) => response.json());
-      setStreetInstance(response);
-    })();
+    getStreet();
   }, [streetSlug]);
 
   if (!streetInstance) {

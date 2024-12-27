@@ -1,10 +1,8 @@
-
-
-import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import "leaflet/dist/leaflet.css";
-import { Icon, map } from "leaflet";
+import { Icon } from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Street, StreetList } from '../types';
