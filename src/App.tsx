@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList.js";
 import BlogPostInstance from "./components/BlogPost.js";
 import StreetInstance from "./components/Street";
-import AboutPage from "./components/staticPages/About.js";
-import ContactPage from "./components/staticPages/Contact.js";
-import FaqPage from "./components/staticPages/FAQ.js";
+import AboutPage from "./components/staticPages/About";
+import FaqPage from "./components/staticPages/FAQ";
 import ImpressumPage from "./components/staticPages/Impressum";
 import TagList from "./components/TagList.js";
 import TagInstance from "./components/Tag.js";
@@ -25,7 +24,6 @@ const App: FC = () => {
           <Route path="/news/:slug" element={<BlogPostInstance />} />
 
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
         </Routes>

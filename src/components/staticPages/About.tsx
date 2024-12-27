@@ -1,7 +1,8 @@
-import React from "react";
-import Footer from "../layout/Footer";
+import { FC } from 'react';
+import Footer from '../layout/Footer';
 
-export default function AboutPage() {
+const AboutPage: FC = () => {
+
   return (
     <div class="container p-8 bg-white">
       <div class="p-6 bg-violet-100 rounded-lg">
@@ -108,14 +109,6 @@ export default function AboutPage() {
                 view on the website.
               </li>
             </ul>
-
-            <p class="pb-2.5">
-              As you can see, this involves quite a lot of labour... and I
-              haven't even mentioned what goes into engineering the website
-              itself. So, if you appreciate my work and would like to show a
-              token of appreciation, you're welcome to{" "}
-              <a href="https://ko-fi.com/rosamund">buy me a coffee</a>.
-            </p>
           </div>
         </div>
       </div>
@@ -125,4 +118,6 @@ export default function AboutPage() {
       </div>
     </div>
   );
-}
+};
+
+export default AboutPage;
