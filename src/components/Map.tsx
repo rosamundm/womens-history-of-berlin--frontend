@@ -1,11 +1,12 @@
 import { FC, useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
-import { useMap } from "react-leaflet/hooks";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import 'leaflet/dist/leaflet.css';
+import { Icon } from 'leaflet';
+import { useMap } from 'react-leaflet/hooks';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Street, StreetList } from '../types';
+import { devFunctionsPort } from '../helpers';  // todo: abs import
 
 const getMapCenter = () => {
   const map = useMap();
@@ -20,12 +21,12 @@ const Map: FC = () => {
                         Markers: Prosymbols Premium (Flaticon)";
 
   const customIconComplete = new Icon({
-    iconUrl: require("../assets/green-location-pin.png"),
+    iconUrl: require('../assets/green-location-pin.png'),
     iconSize: [38, 38],
   });
 
   const customIconIncomplete = new Icon({
-    iconUrl: require("../assets/red-location-pin.png"),
+    iconUrl: require('../assets/red-location-pin.png'),
     iconSize: [38, 38],
   });
 
@@ -33,7 +34,7 @@ const Map: FC = () => {
 
   const getMapStreets = async () => {
     try {
-      const response = await axios.get("http://localhost:5555/.netlify/functions/get-street-list");
+      const response = await axios.get(`http://localhost:${devFunctionsPort}/.netlify/functions/get-street-list`);
       setMapStreets(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -44,7 +45,7 @@ const Map: FC = () => {
     getMapStreets();
   }, []);
 
-  console.log("streets:", mapStreets)
+  console.log('streets:', mapStreets)
   mapStreets.data?.map((street: Street) => console.log(street.name))
 
   if (!mapStreets) {

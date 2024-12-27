@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import { FC, useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
-import parse from "html-react-parser";
-import Footer from "./layout/Footer";
-import { Street } from "../types";
+import parse from 'html-react-parser';
+import Footer from './layout/Footer';
+import { Street } from '../types';
+import { devFunctionsPort } from '../helpers';  // todo: abs import
 
-export default function StreetInstance() {
+const StreetInstance: FC = () => {
+
   let { street_slug } = useParams();
   const streetSlug = street_slug;
   const [streetInstance, setStreetInstance] = useState<Street>(null);
 
   const getStreet = async () => {
     try {
-      const response = await axios.get(`http://localhost:5555/.netlify/functions/get-street-instance?slug=${streetSlug}`);
+      const response = await axios.get(`http://localhost:${devFunctionsPort}/.netlify/functions/get-street-instance?slug=${streetSlug}`);
       setStreetInstance(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -132,3 +134,5 @@ export default function StreetInstance() {
     </div>
   );
 }
+
+export default StreetInstance;

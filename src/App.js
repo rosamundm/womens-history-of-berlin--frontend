@@ -7,7 +7,7 @@ import StreetInstance from "./components/Street";
 import AboutPage from "./components/staticPages/About.js";
 import ContactPage from "./components/staticPages/Contact.js";
 import FaqPage from "./components/staticPages/FAQ.js";
-// import ImpressumDatenschutzPage from "./components/staticPages/ImpressumDatenschutz.js";
+import ImpressumPage from "./components/staticPages/Impressum";
 import TagList from "./components/TagList.js";
 import TagInstance from "./components/Tag.js";
 import Homepage from "./components/layout/Homepage";
@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
-          {/* <Route path="/impressum" element={<ImpressumDatenschutzPage />} /> */}
+          <Route path="/impressum" element={<ImpressumPage />} />
         </Routes>
       </Router>
     </main>
