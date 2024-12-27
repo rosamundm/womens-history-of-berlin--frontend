@@ -1,5 +1,3 @@
-export const devFunctionsPort = 5555
-
 export const loadAddress = () => {
     return [
         process.env.REACT_APP_IMPRESSUM_ADDRESS_FIRST_LINE,

@@ -4,7 +4,7 @@ import axios from 'axios';
 import parse from 'html-react-parser';
 import Footer from './layout/Footer';
 import { Street } from '../types';
-import { devFunctionsPort } from '../helpers';  // todo: abs import
+import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
 
 const StreetInstance: FC = () => {
 
@@ -14,7 +14,9 @@ const StreetInstance: FC = () => {
 
   const getStreet = async () => {
     try {
-      const response = await axios.get(`http://localhost:${devFunctionsPort}/.netlify/functions/get-street-instance?slug=${streetSlug}`);
+      const response = await axios.get(
+        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-street-instance?slug=${streetSlug}`
+      );
       setStreetInstance(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);

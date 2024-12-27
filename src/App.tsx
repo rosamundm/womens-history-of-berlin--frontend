@@ -1,8 +1,7 @@
-import React from "react";
+import { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList.js";
 import BlogPostInstance from "./components/BlogPost.js";
-import Map from "./components/Map";
 import StreetInstance from "./components/Street";
 import AboutPage from "./components/staticPages/About.js";
 import ContactPage from "./components/staticPages/Contact.js";
@@ -12,7 +11,7 @@ import TagList from "./components/TagList.js";
 import TagInstance from "./components/Tag.js";
 import Homepage from "./components/layout/Homepage";
 
-export default function App() {
+const App: FC = () => {
   return (
     <main className="text-indigo-800 bg-[#FFFFFF] body-font min-h-screen flex items-center justify-center font-serif">
       <Router>
@@ -34,3 +33,5 @@ export default function App() {
     </main>
   );
 }
+
+export default App;

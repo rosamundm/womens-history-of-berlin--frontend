@@ -1,4 +1,6 @@
-export const validDistrictSlugs = [
+export const DEV_FUNCTIONS_PORT = 5555
+
+export const VALID_DISTRICT_SLUGS = [
   "charlottenburg-wilmersdorf",
   "friedrichshain-kreuzberg",
   "lichtenberg",
