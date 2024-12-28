@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-function Footer() {
+const Footer: FC = () => {
   return (
     <footer class="bg-violet-50 rounded-lg shadow m-4">
       <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">

@@ -1,17 +1,24 @@
+export type Link = string
+
 export type District = {
   name: string;
   districtSlug: string;
   streets: Street[];
+  imagePath?: Link
 };
 
 export type Street = {
-  // todo: add optional fields
   name: string,
   streetSlug: string,
   district: District,
-  image: string,
+  image: Link,
   tags: Tag[],
   geocode: number[]
+  eponymDateOfBirth?: Date,
+  eponymDateOfDeath?: Date
+  eponymPlaceOfBirth?: string,
+  eponymPlaceOfDeath?: string
+  eponymDescription?: string,
 };
 
 export type Tag = {

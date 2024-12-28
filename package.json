@@ -35,7 +35,14 @@
     "start": "netlify dev"
   },
   "eslintConfig": {
-    "extends": []
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -51,6 +58,7 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.37.3",
     "tailwindcss": "^3.0.24"
   }
 }
