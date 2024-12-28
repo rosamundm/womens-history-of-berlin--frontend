@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import parse from "html-react-parser";
-import Footer from "./layout/Footer";
+import { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import parse from 'html-react-parser';
 
-export default function BlogPostInstance() {
+import Footer from './layout/Footer';
+import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+
+const BlogPostInstance: FC = () => {
+  
   let { slug } = useParams();
   const [postInstance, setPostInstance] = useState(null);
 
-  useEffect(() => {
-    if (!slug) {
-      return;
+  const getPost = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-blog-post-instance?slug=${slug}`
+      );
+      setPostInstance(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
+  };
 
-    (async () => {
-      const response = await fetch(
-        `/.netlify/functions/get-blog-post-instance?slug=${slug}`,
-        { method: "GET" },
-      ).then((response) => response.json());
-      setPostInstance(response);
-    })();
+  useEffect(() => {
+    getPost();
   }, [slug]);
 
   if (!postInstance) {
@@ -59,4 +64,6 @@ export default function BlogPostInstance() {
       </div>
     </div>
   );
-}
+};
+
+export default BlogPostInstance;

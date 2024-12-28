@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Footer from "./layout/Footer";
+import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Footer from './layout/Footer';
+import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
 
-export default function BlogList() {
+const BlogList: FC = () => {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
 
+  const getPosts = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-blog-post-list`
+      );
+      setPosts(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
-    (async () => {
-      const response = await fetch("/.netlify/functions/get-blog-post-list", {
-        method: "GET",
-      }).then((response) => response.json());
-      setPosts(response);
-    })();
+    getPosts();
   }, []);
 
   if (posts.length === 0) {
@@ -52,4 +60,6 @@ export default function BlogList() {
       </div>
     );
   }
-}
+};
+
+export default BlogList;

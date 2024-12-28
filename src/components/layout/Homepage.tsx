@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import React, { FC } from 'react'
 import Footer from "./Footer";
 import HomepageHeader from "./HomepageHeader";

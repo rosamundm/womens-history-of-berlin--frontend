@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Footer from "./layout/Footer";
+import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Footer from './layout/Footer';
+import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { Tag } from '../types';
 
-export default function TagList() {
+const TagList: FC = () => {
+
   const [tags, setTags] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
 
+  const getTags = async () => {
+    try {
+      const response = await axios.get(`http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-tag-list`);
+      setTags(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
-    (async () => {
-      const response = await fetch("/.netlify/functions/get-tag-list", {
-        method: "GET",
-      }).then((response) => response.json());
-      setTags(response);
-    })();
+    getTags();
   }, []);
 
   if (tags.length === 0) {
@@ -28,7 +36,7 @@ export default function TagList() {
           <div class="p-6 text-4xl">Explore by tag</div>
 
           <div className="street-list" class="p-8">
-            {tags.data.map((tag) => (
+            {tags.data.map((tag: Tag) => (
               <div
                 className="text-2xl p-3"
                 key={tag.name}
@@ -46,4 +54,6 @@ export default function TagList() {
       </div>
     );
   }
-}
+};
+
+export default TagList;

@@ -1,13 +1,16 @@
 import { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BlogList from "./components/BlogList.js";
-import BlogPostInstance from "./components/BlogPost.js";
+import BlogList from "./components/BlogList";
+import BlogPostInstance from "./components/BlogPost";
 import StreetInstance from "./components/Street";
 import AboutPage from "./components/staticPages/About";
-import FaqPage from "./components/staticPages/FAQ";
+
+// @ts-ignore (1261)
+import FaqPage from "./components/staticPages/Faq";
+
 import ImpressumPage from "./components/staticPages/Impressum";
-import TagList from "./components/TagList.js";
-import TagInstance from "./components/Tag.js";
+import TagList from "./components/TagList";
+import TagInstance from "./components/Tag";
 import Homepage from "./components/layout/Homepage";
 
 const App: FC = () => {

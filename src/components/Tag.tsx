@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Footer from "./layout/Footer";
+// @ts-nocheck
 
-export default function TagInstance() {
+import { FC, useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import Footer from './layout/Footer';
+import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { Street, Tag } from '../types';
+
+const TagInstance: FC = () => {
+
   let { slug } = useParams();
-  const [tagInstance, setTagInstance] = useState(null);
-  const [selectedStreetFromTag, setSelectedStreetFromTag] = useState(null);
+  const [tagInstance, setTagInstance] = useState<Tag>(null);
+  const [selectedStreetFromTag, setSelectedStreetFromTag] = useState<Street>(null);
+
+  const getTag = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-tag-instance?slug=${slug}`
+      );
+      setTagInstance(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
-    if (!slug) {
-      return;
-    }
-
-    (async () => {
-      const response = await fetch(
-        `/.netlify/functions/get-tag-instance?slug=${slug}`,
-        { method: "GET" },
-      ).then((response) => response.json());
-      setTagInstance(response);
-    })();
+    getTag();
   }, [slug]);
 
   if (!tagInstance) {
@@ -47,12 +54,13 @@ export default function TagInstance() {
           </div>
 
           <div className="street-list" class="p-8">
-            {tagInstance.data.streets.map((street) => (
+            {tagInstance.data.streets.map((street: Street) => (
               <div
                 className="text-2xl p-3"
                 key={street.name}
                 onClick={() => setSelectedStreetFromTag(street)}
               >
+                {/* todo: change street_slug to slug */}
                 <Link to={`/streets/${street.street_slug}/`}>
                   {street.name}
                 </Link>
@@ -74,4 +82,6 @@ export default function TagInstance() {
       </div>
     </div>
   );
-}
+};
+
+export default TagInstance;
