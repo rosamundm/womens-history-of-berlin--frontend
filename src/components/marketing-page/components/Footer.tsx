@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
+import SitemarkIcon from './SitemarkIcon';
 
 function Copyright() {
   return (
@@ -49,7 +50,8 @@ export default function Footer() {
             minWidth: { xs: '100%', sm: '60%' },
           }}
         >
-          {/* <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
+          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
+            <SitemarkIcon />
             <Typography variant="body2" gutterBottom sx={{ fontWeight: 600, mt: 2 }}>
               Join the newsletter
             </Typography>
@@ -83,9 +85,9 @@ export default function Footer() {
                 Subscribe
               </Button>
             </Stack>
-          </Box> */}
+          </Box>
         </Box>
-        {/* <Box
+        <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
@@ -110,7 +112,7 @@ export default function Footer() {
           <Link color="text.secondary" variant="body2" href="#">
             FAQs
           </Link>
-        </Box> */}
+        </Box>
         <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
@@ -118,23 +120,20 @@ export default function Footer() {
             gap: 1,
           }}
         >
-          {/* <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
+          <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
             Company
-          </Typography> */}
-          <Link color="text.secondary" variant="body2" href="/">
-            Back to homepage
+          </Typography>
+          <Link color="text.secondary" variant="body2" href="#">
+            About us
           </Link>
-          <Link color="text.secondary" variant="body2" href="/about">
-            About
+          <Link color="text.secondary" variant="body2" href="#">
+            Careers
           </Link>
-          <Link color="text.secondary" variant="body2" href="/faq">
-            FAQ
-          </Link>
-          <Link color="text.secondary" variant="body2" href="/news">
-            News
+          <Link color="text.secondary" variant="body2" href="#">
+            Press
           </Link>
         </Box>
-        {/* <Box
+        <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
@@ -153,7 +152,7 @@ export default function Footer() {
           <Link color="text.secondary" variant="body2" href="#">
             Contact
           </Link>
-        </Box> */}
+        </Box>
       </Box>
       <Box
         sx={{
@@ -166,8 +165,14 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" variant="body2" href="/impressum">
-            Impressum (Privacy Policy & Terms of Service) — in German
+          <Link color="text.secondary" variant="body2" href="#">
+            Privacy Policy
+          </Link>
+          <Typography sx={{ display: 'inline', mx: 0.5, opacity: 0.5 }}>
+            &nbsp;•&nbsp;
+          </Typography>
+          <Link color="text.secondary" variant="body2" href="#">
+            Terms of Service
           </Link>
           <Copyright />
         </div>

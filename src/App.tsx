@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList";
@@ -15,7 +17,8 @@ import Homepage from "./components/layout/Homepage";
 
 const App: FC = () => {
   return (
-    <main className="text-indigo-800 bg-[#FFFFFF] body-font min-h-screen flex items-center justify-center font-serif">
+    // <Homepage />
+    // <main className="text-indigo-800 bg-[#FFFFFF] body-font min-h-screen flex items-center justify-center font-serif">
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />} />
@@ -31,7 +34,7 @@ const App: FC = () => {
           <Route path="/impressum" element={<ImpressumPage />} />
         </Routes>
       </Router>
-    </main>
+    // </main>
   );
 }
 

@@ -1,36 +1,40 @@
-import React, { FC } from 'react'
-import Footer from "./Footer";
+import { FC } from 'react'
 import HomepageHeader from "./HomepageHeader";
 import Map from "../Map";
 
-const Homepage: FC = () => {
+// from MUI kit
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Hero from './Hero';
+import Footer from './Footer';
+
+import BaseTheme from './theme/BaseTheme'
+
+interface HomepageProps {
+  disableCustomTheme?: boolean
+}
+
+const Homepage: FC<HomepageProps> = ({ ...props }) => {
   return (
-    <div className="container p-8 py-1 bg-white">
-      <div className="p-6 bg-violet-100 rounded-lg">
-        <div className="p-5 px-2.5">
-          <HomepageHeader />
-        </div>
-
-        <Map />
-
-        <div className="p-5 px-2.5">
-          <p className="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
-            Here's a topographic representation of the Berlin streets named
-            after women. Each marker contains a link that leads to the page
-            telling the story of the street's eponym (opens in a new tab).
-          </p>
-          <p className="pb-2.5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify">
-            <b>NB:</b> These are only the streets whose entries are complete. As
-            explained <a href="http://named-after-women.berlin/about">here</a>,
-            the archive is being continuously updated!
-          </p>
-        </div>
-      </div>
-
+    <BaseTheme {...props}>
+      <CssBaseline enableColorScheme />
+      <Hero />
       <div>
+        <Map />
+        {/* <LogoCollection /> */}
+        {/* <Features />
+        <Divider />
+        <Testimonials />
+        <Divider />
+        <Highlights />
+        <Divider />
+        <Pricing />
+        <Divider />
+        <FAQ /> */}
+        <Divider />
         <Footer />
       </div>
-    </div>
+    </BaseTheme>
   );
 }
 

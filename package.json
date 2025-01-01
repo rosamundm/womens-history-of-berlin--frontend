@@ -4,8 +4,13 @@
   "private": true,
   "proxy": "http://127.0.0.1:9000",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/lato": "^5.1.0",
     "@headlessui/react": "^1.6.1",
     "@heroicons/react": "^1.0.6",
+    "@mui/icons-material": "^6.3.0",
+    "@mui/material": "^6.3.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -35,10 +40,7 @@
     "start": "netlify dev"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
+    "extends": [],
     "rules": {
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off"

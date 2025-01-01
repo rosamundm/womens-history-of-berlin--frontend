@@ -1,5 +1,7 @@
+// @ts-nocheck
+
 import { FC } from "react";
-import Footer from "../layout/Footer";
+import Footer from '../layout/Footer';
 import { loadAddress, loadEmailAddress } from "../../helpers";  // todo: abs import
 
 const ImpressumPage: FC = () => {
