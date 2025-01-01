@@ -7,8 +7,7 @@ import BlogPostInstance from "./components/BlogPost";
 import StreetInstance from "./components/Street";
 import AboutPage from "./components/staticPages/About";
 
-// @ts-ignore (1261)
-import FaqPage from "./components/staticPages/Faq";
+import FaqPage from "./components/staticPages/FAQ";
 
 import ImpressumPage from "./components/staticPages/Impressum";
 import TagList from "./components/TagList";
