@@ -39,8 +39,6 @@ const Map: FC = () => {
   const getMapStreets = async () => {
     try {
       const response = await axios.get(`${getFunctionsUrl()}get-street-list`);
-      // const response = await axios.get("/.netlify/functions/get-street-list");
-      // const response = await axios.get(`http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-street-list`);
       setMapStreets(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
