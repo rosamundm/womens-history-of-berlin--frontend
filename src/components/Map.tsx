@@ -9,6 +9,8 @@ import { useMap } from 'react-leaflet/hooks';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Street, StreetList } from '../types';
 import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';  // todo: abs import
+
 
 const getMapCenter = () => {
   const map = useMap();
@@ -36,7 +38,8 @@ const Map: FC = () => {
 
   const getMapStreets = async () => {
     try {
-      const response = await axios.get("/.netlify/functions/get-street-list");
+      const response = await axios.get(`${getFunctionsUrl()}get-street-list`);
+      // const response = await axios.get("/.netlify/functions/get-street-list");
       // const response = await axios.get(`http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-street-list`);
       setMapStreets(response.data);
     } catch (error) {

@@ -34,20 +34,6 @@ const StyledBox = styled('div')(({ theme }) => ({
 const Placeholder: FC = () => {
   return (
     <Box
-    //   id="hero"
-    //   sx={(theme) => ({
-    //     width: '100%',
-    //     backgroundRepeat: 'no-repeat',
-
-    //     backgroundImage:
-    //       // 'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)',
-    //       'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(270, 29.10%, 49.20%), transparent)',
-    //     ...theme.applyStyles('dark', {
-    //       backgroundImage:
-    //         // 'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)',
-    //         'radial-gradient(ellipse 80% 50% at 50% -20%,hsl(270, 100%, 50%), transparent)',
-    //     }),
-    //   })}
     >
       <Container
         sx={{
