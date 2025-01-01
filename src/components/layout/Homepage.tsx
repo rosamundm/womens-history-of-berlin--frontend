@@ -10,6 +10,8 @@ import Footer from './Footer';
 
 import BaseTheme from './theme/BaseTheme'
 
+import Placeholder from './Placeholder';
+
 interface HomepageProps {
   disableCustomTheme?: boolean
 }
@@ -18,10 +20,14 @@ const Homepage: FC<HomepageProps> = ({ ...props }) => {
   return (
     <BaseTheme {...props}>
       <CssBaseline enableColorScheme />
-      <Hero />
       <div>
 
-        {/* <Map />
+        <Placeholder />
+
+        {/* to keep: */}
+
+        {/* <Hero />
+        <Map />
         <Divider />
         <Footer /> */}
 
