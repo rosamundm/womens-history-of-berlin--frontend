@@ -68,7 +68,7 @@ export default function Hero() {
           useFlexGap
           sx={{ alignItems: 'center', width: { xs: '100%', sm: '70%' } }}
         >
-          <Typography
+          {/* <Typography
             variant="h1"
             sx={{
               display: 'flex',
@@ -89,7 +89,7 @@ export default function Hero() {
                 }),
               })}
             />
-          </Typography>
+          </Typography> */}
           <Typography
             sx={{
               textAlign: 'center',
@@ -97,7 +97,8 @@ export default function Hero() {
               width: { sm: '100%', md: '80%' },
             }}
           >
-            a project dedicated to the legacy of women in berlin's street names
+            Hello nosy :)
+            {/* a project dedicated to the legacy of women in berlin's street names */}
           </Typography>
           {/* <Stack
             direction={{ xs: 'column', sm: 'row' }}

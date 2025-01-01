@@ -20,7 +20,13 @@ const Homepage: FC<HomepageProps> = ({ ...props }) => {
       <CssBaseline enableColorScheme />
       <Hero />
       <div>
-        <Map />
+
+        {/* <Map />
+        <Divider />
+        <Footer /> */}
+
+        {/* to delete after design confirmed: */}
+
         {/* <LogoCollection /> */}
         {/* <Features />
         <Divider />
@@ -31,8 +37,6 @@ const Homepage: FC<HomepageProps> = ({ ...props }) => {
         <Pricing />
         <Divider />
         <FAQ /> */}
-        <Divider />
-        <Footer />
       </div>
     </BaseTheme>
   );

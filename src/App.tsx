@@ -16,23 +16,23 @@ import Homepage from "./components/layout/Homepage";
 
 const App: FC = () => {
   return (
-    // <Homepage />
+    <Homepage />
     // <main className="text-indigo-800 bg-[#FFFFFF] body-font min-h-screen flex items-center justify-center font-serif">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
+      // <Router>
+      //   <Routes>
+      //     <Route path="/" element={<Homepage />} />
 
-          <Route path="/streets/:street_slug" element={<StreetInstance />} />
-          <Route path="/tags" element={<TagList />} />
-          <Route path="/tags/:slug" element={<TagInstance />} />
-          <Route path="/news" element={<BlogList />} />
-          <Route path="/news/:slug" element={<BlogPostInstance />} />
+      //     <Route path="/streets/:street_slug" element={<StreetInstance />} />
+      //     <Route path="/tags" element={<TagList />} />
+      //     <Route path="/tags/:slug" element={<TagInstance />} />
+      //     <Route path="/news" element={<BlogList />} />
+      //     <Route path="/news/:slug" element={<BlogPostInstance />} />
 
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/faq" element={<FaqPage />} />
-          <Route path="/impressum" element={<ImpressumPage />} />
-        </Routes>
-      </Router>
+      //     <Route path="/about" element={<AboutPage />} />
+      //     <Route path="/faq" element={<FaqPage />} />
+      //     <Route path="/impressum" element={<ImpressumPage />} />
+      //   </Routes>
+      // </Router>
     // </main>
   );
 }
