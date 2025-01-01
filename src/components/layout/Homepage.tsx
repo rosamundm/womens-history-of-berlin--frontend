@@ -22,14 +22,14 @@ const Homepage: FC<HomepageProps> = ({ ...props }) => {
       <CssBaseline enableColorScheme />
       <div>
 
-        {/* <Placeholder /> */}
+        <Placeholder />
 
         {/* to keep: */}
 
-        <Hero />
+        {/* <Hero />
         <Map />
         <Divider />
-        <Footer />
+        <Footer /> */}
 
         {/* to delete after design confirmed: */}
 
