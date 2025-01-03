@@ -19,8 +19,7 @@ const App: FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />} />
-
-          {/* <Route path="/streets/:street_slug" element={<StreetInstance />} />
+          <Route path="/streets/:street_slug" element={<StreetInstance />} />
           <Route path="/tags" element={<TagList />} />
           <Route path="/tags/:slug" element={<TagInstance />} />
           <Route path="/news" element={<BlogList />} />
@@ -28,7 +27,7 @@ const App: FC = () => {
 
           <Route path="/about" element={<AboutPage />} />
           <Route path="/faq" element={<FaqPage />} />
-          <Route path="/impressum" element={<ImpressumPage />} /> */}
+          <Route path="/impressum" element={<ImpressumPage />} />
         </Routes>
       </Router>
   );
