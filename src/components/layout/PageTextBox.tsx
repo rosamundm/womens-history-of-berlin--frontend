@@ -1,4 +1,4 @@
-import { Container, Stack, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { FC } from 'react';
 
 interface PageTextBoxProps {
@@ -6,37 +6,26 @@ interface PageTextBoxProps {
 }
 
 const PageTextBox: FC<PageTextBoxProps> = ({ text }) => {
-
     return (
-
-    <Container
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
-        }}
+      <Container
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            // pt: { xs: 14, sm: 20 },
+            // pb: { xs: 8, sm: 12 },
+            pb: '3rem',
+            pt: '2.5rem',
+            width: '100%',
+            maxWidth: '100%'
+          }}
       >
-        <Stack
-          spacing={2}
-          useFlexGap
-          sx={{ alignItems: 'center', width: { xs: '100%', sm: '70%' } }}
-        >
-          {/* <Typography
-            variant="h1"
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              alignItems: 'center',
-              fontSize: 'clamp(3rem, 10vw, 3.5rem)',
-            }}
-          > */}
           <Typography
             sx={{
-              textAlign: 'center',
+              textAlign: 'left',
               color: 'text.secondary',
-              width: { sm: '100%', md: '80%' },
+              // width: { sm: '100%', md: '80%' },
+              width: '100%'
             }}
           >
             {text}
@@ -53,7 +42,6 @@ const PageTextBox: FC<PageTextBoxProps> = ({ text }) => {
             />
           </Typography> */}
           </Typography>
-        </Stack>
       </Container>
     )
 }
