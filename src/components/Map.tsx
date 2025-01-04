@@ -49,9 +49,6 @@ const Map: FC = () => {
     getMapStreets();
   }, []);
 
-  console.log('streets:', mapStreets)
-  mapStreets.data?.map((street: Street) => console.log(street.name))
-
   if (!mapStreets) {
     return (
       <div class="p-6 text-3xl">

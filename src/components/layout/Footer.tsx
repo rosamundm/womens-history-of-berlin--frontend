@@ -63,7 +63,7 @@ const Footer: FC = () => {
           }}
         >
           <Link color="text.secondary" variant="body2" href="/">
-            Back to homepage
+            Back to map
           </Link>
           <Link color="text.secondary" variant="body2" href="/about">
             About

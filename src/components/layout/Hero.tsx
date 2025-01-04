@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { visuallyHidden } from '@mui/utils';
 import { styled } from '@mui/material/styles';
 
-const StyledBox = styled('div')(({ theme }) => ({
+export const StyledBox = styled('div')(({ theme }) => ({
   alignSelf: 'center',
   width: '100%',
   height: 400,
@@ -97,41 +97,7 @@ export default function Hero() {
           >
             a project dedicated to the legacy of women in berlin's street names
           </Typography>
-          {/* <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={1}
-            useFlexGap
-            sx={{ pt: 2, width: { xs: '100%', sm: '350px' } }}
-          >
-            <InputLabel htmlFor="email-hero" sx={visuallyHidden}>
-              Email
-            </InputLabel>
-            <TextField
-              id="email-hero"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              fullWidth
-              slotProps={{
-                htmlInput: {
-                  autoComplete: 'off',
-                  'aria-label': 'Enter your email address',
-                },
-              }}
-            />
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              sx={{ minWidth: 'fit-content' }}
-            >
-              Start now
-            </Button>
-          </Stack> */}
         </Stack>
-        {/* <StyledBox id="image" /> */}
       </Container>
     </Box>
   );
