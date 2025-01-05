@@ -8,9 +8,7 @@ import { Icon } from 'leaflet';
 import { useMap } from 'react-leaflet/hooks';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Street, StreetList } from '../types';
-import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
 import { getFunctionsUrl } from '../helpers';  // todo: abs import
-
 
 const getMapCenter = () => {
   const map = useMap();

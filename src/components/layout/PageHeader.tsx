@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { FC } from 'react';
 
@@ -40,7 +39,7 @@ const PageHeader: FC<PageHeaderProps> = ({ title }) => {
               sx={{ alignItems: 'center', width: { xs: '100%', sm: '70%' } }}
             >
               <Typography
-                variant="h1"
+                variant="h3"
                 sx={{
                   display: 'flex',
                   flexDirection: { xs: 'column', sm: 'row' },

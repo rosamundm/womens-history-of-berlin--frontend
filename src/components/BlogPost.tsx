@@ -5,10 +5,20 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import parse from 'html-react-parser';
 
-import Footer from './layout/Footer';
-import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { Box, Container, Divider, Stack, Typography } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid2';
 
-const BlogPostInstance: FC = () => {
+import Footer from './layout/Footer';
+import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { PageThemeProps } from '../types';
+import { blogPostLoadingText } from '../texts';
+
+import BaseTheme from './layout/theme/BaseTheme'
+import PageHeader from './layout/PageHeader'
+import PageTextBox from './layout/PageTextBox'
+
+const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
   
   let { slug } = useParams();
   const [postInstance, setPostInstance] = useState(null);
@@ -16,7 +26,7 @@ const BlogPostInstance: FC = () => {
   const getPost = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-blog-post-instance?slug=${slug}`
+        `${getFunctionsUrl()}get-blog-post-instance?slug=${slug}`
       );
       setPostInstance(response.data);
     } catch (error) {
@@ -28,44 +38,50 @@ const BlogPostInstance: FC = () => {
     getPost();
   }, [slug]);
 
-  if (!postInstance) {
-    return (
-      <div class="container p-8 bg-white">
-        <div class="p-6 text-3xl">
-          Loading post...
-          <div class="py-3 text-xl">
-            If it takes too long, please try again or check that the URL is
-            valid.
-          </div>
-        </div>
-        <div>
-          <Footer />
-        </div>
-      </div>
-    );
-  }
-
-  const parsedPostBody = parse(postInstance.data.body);
+  if (!postInstance) {return <PageTextBox text={blogPostLoadingText} />}
 
   return (
-    <div class="container p-8 bg-white">
-      <div className="post-detail" class="p-6 bg-violet-100 rounded-lg">
-        <div class="sm:p-2.5 md:p-5 lg:p-5 bg-violet-100">
-          <div class="text-4xl">{postInstance.data.title}</div>
-
-          <div class="text-base p-5">{postInstance.data.published}</div>
-
-          <div class="p-4 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify">
-            {parsedPostBody}
-          </div>
-        </div>
-      </div>
-
-      <div>
+    <BaseTheme {...props}>
+      {/* todo: resolve header width problem with enableColorScheme: */}
+      <CssBaseline />
+        <Grid container
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            // pt: { xs: 14, sm: 20 },
+            // pb: { xs: 8, sm: 12 },
+          }}
+        >
+          <Grid
+            item
+            sx={{
+              alignItems: 'center',
+              width: '100%'  
+            }}
+          >
+            <PageHeader title={postInstance.data.title}/>
+          </Grid>
+          <Grid
+            item
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '50%',  // todo: widen for smaller screens
+            }}
+          >
+            <Typography>
+              {postInstance.data.published}
+            </Typography>
+            <PageTextBox text={parse(postInstance.data.body)} />
+          </Grid>
+        </Grid>
+        <Divider />
         <Footer />
-      </div>
-    </div>
-  );
+    </BaseTheme>
+  )
 };
 
 export default BlogPostInstance;

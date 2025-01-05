@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './layout/Footer';
-import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';  // todo: abs import
 
 const BlogList: FC = () => {
   const [posts, setPosts] = useState([]);
@@ -13,7 +13,7 @@ const BlogList: FC = () => {
   const getPosts = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-blog-post-list`
+        `${getFunctionsUrl()}get-blog-post-list`
       );
       setPosts(response.data);
     } catch (error) {
@@ -45,7 +45,7 @@ const BlogList: FC = () => {
               {posts.data.map((post) => (
                 <div
                   className="text-2xl p-3"
-                  key={post.title}
+                  key={post.id}
                   onClick={() => setSelectedPost(post)}
                 >
                   <div class="text-base p-3">{post.published}</div>

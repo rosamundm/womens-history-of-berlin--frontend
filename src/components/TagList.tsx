@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './layout/Footer';
-import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';  // todo: abs import
 import { Tag } from '../types';
 
 const TagList: FC = () => {
@@ -14,7 +14,7 @@ const TagList: FC = () => {
 
   const getTags = async () => {
     try {
-      const response = await axios.get(`http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-tag-list`);
+      const response = await axios.get(`${getFunctionsUrl()}get-tag-list`);
       setTags(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);

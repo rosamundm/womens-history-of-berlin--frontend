@@ -16,7 +16,7 @@ const Impressum: FC = () => {
   return (
     <>
       <Link color="text.secondary" variant="body2" href="/impressum">
-        Impressum (Privacy Policy & Terms of Service) — in German
+        Impressum (🇩🇪 Privacy Policy & Terms of Service)
       </Link>
     </>
   );
@@ -63,7 +63,7 @@ const Footer: FC = () => {
           }}
         >
           <Link color="text.secondary" variant="body2" href="/">
-            Back to map
+            Map
           </Link>
           <Link color="text.secondary" variant="body2" href="/about">
             About
