@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import HomepageHeader from "./HomepageHeader";
+import { FC } from 'react';
 import Map from "../Map";
 
 // from MUI kit

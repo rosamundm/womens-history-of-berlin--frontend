@@ -94,6 +94,7 @@ export default function Hero() {
               color: 'text.secondary',
               width: { sm: '100%', md: '80%' },
             }}
+            variant="subtitle1"
           >
             a project dedicated to the legacy of women in berlin's street names
           </Typography>

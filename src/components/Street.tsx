@@ -43,7 +43,7 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
   const TagSection: FC = () => {
     return (
       <Typography>
-        Tags:{' '}
+        <Typography display="inline" variant="bold">Tags:{' '}</Typography>
           {streetInstance && tags.map((tag) =>
             tag == "[]" ? (
               <Typography display="inline">
@@ -121,7 +121,7 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
             >
                 {/* Birth */}
                 <Typography>
-                  Born:{' '}
+                <Typography display="inline" variant="bold">Born:{' '}</Typography>
                   {streetInstance.data.eponym_date_of_birth ? (
                     <Typography display="inline">
                       {streetInstance.data.eponym_date_of_birth}
@@ -141,7 +141,7 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
 
                 {/* Death */}
                 <Typography>
-                  Died:{' '}
+                <Typography display="inline" variant="bold">Died:{' '}</Typography>
                     {streetInstance.data.eponym_date_of_death ? (
                       <Typography display="inline">
                         {streetInstance.data.eponym_date_of_death}

@@ -25,8 +25,9 @@ const PageTextBox: FC<PageTextBoxProps> = ({ text }) => {
               textAlign: 'left',
               color: 'text.secondary',
               // width: { sm: '100%', md: '80%' },
-              width: '100%'
+              width: '100%',
             }}
+            variant="body1"
           >
             {text}
             {/* <Typography

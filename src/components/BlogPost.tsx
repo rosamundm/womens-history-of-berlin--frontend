@@ -72,7 +72,7 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
               width: '50%',  // todo: widen for smaller screens
             }}
           >
-            <Typography>
+            <Typography variant="subtitle1">
               {postInstance.data.published}
             </Typography>
             <PageTextBox text={parse(postInstance.data.body)} />
