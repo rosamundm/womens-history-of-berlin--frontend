@@ -3,11 +3,24 @@
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Box, Divider, Typography } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid2';
+
+import PageHeader from './layout/PageHeader'
+import PageTextBox from './layout/PageTextBox'
 import Footer from './layout/Footer';
+
+import BaseTheme from './layout/theme/BaseTheme'
+
 import { getFunctionsUrl } from '../helpers';  // todo: abs import
 import { Tag } from '../types';
 
-const TagList: FC = () => {
+import { tagListLoadingText } from '../texts';
+
+import { PageThemeProps } from '../types';
+
+const TagList: FC<PageThemeProps> = ({ ...props }) => {
 
   const [tags, setTags] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
@@ -25,37 +38,55 @@ const TagList: FC = () => {
     getTags();
   }, []);
 
-  if (tags.length === 0) {
-    return (
-      <div class="p-8 bg-violet-300">
-        <div class="p-6 text-3xl font-serif">Loading tags...</div>
-      </div>
-    );
-  } else {
-    return (
-      <div class="container p-8 bg-white">
-        <div className="post-detail" class="p-6 bg-violet-100 rounded-lg">
-          <div class="p-6 text-4xl">Explore by tag</div>
+  if (!tags) {return <PageTextBox text={tagListLoadingText} />}
 
-          <div className="street-list" class="p-8">
-            {tags.data.map((tag: Tag) => (
-              <div
-                className="text-2xl p-3"
-                key={tag.name}
-                onClick={() => setSelectedTag(tag)}
-              >
-                <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <Footer />
-        </div>
-      </div>
-    );
-  }
+  return (
+      <BaseTheme {...props}>
+      <CssBaseline />
+        <Grid container
+          sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              // pt: { xs: 14, sm: 20 },
+              // pb: { xs: 8, sm: 12 },
+          }}
+          >
+          <Grid
+            item
+            sx={{
+              alignItems: 'center',
+              width: '100%'  
+            }}
+          >
+              <PageHeader title="Explore by tag" />
+          </Grid>
+          <Grid
+            item
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '50%',  // todo: widen for smaller screens
+            }}
+          >
+            <Box sx={{pb: '5rem'}}>
+              {tags.data?.map((tag: Tag) => (
+                <Typography
+                  key={tag.name}
+                  onClick={() => setSelectedTag(tag)}
+                >
+                  <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
+                </Typography>
+              ))}
+            </Box>
+          </Grid>
+        </Grid>
+        <Divider />
+        <Footer />
+      </BaseTheme>
+    )
 };
 
 export default TagList;
