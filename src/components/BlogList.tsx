@@ -15,7 +15,7 @@ import BaseTheme from './layout/theme/BaseTheme'
 
 import { getFunctionsUrl } from '../helpers';  // todo: abs import
 
-import { postListLoadingText } from '../texts';
+import { blogPostListLoadingText } from '../texts';
 
 const BlogList: FC<PageThemeProps> = ({ ...props }) => {
   const [posts, setPosts] = useState([]);
@@ -36,7 +36,7 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
     getPosts();
   }, []);
 
-  if (!posts) {return <PageTextBox text={postListLoadingText} />}
+  if (!posts) {return <PageTextBox text={blogPostListLoadingText} />}
 
   return (
       <BaseTheme {...props}>

@@ -17,7 +17,7 @@ import Grid from '@mui/material/Grid2';
 
 import { getFunctionsUrl } from '../helpers';  // todo: abs import
 import { PageThemeProps } from '../types';
-import { staticPageLoadingText } from '../texts';
+import { textPageLoadingText } from '../texts';
 
 const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
     
@@ -39,7 +39,7 @@ const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
       getPage();
     }, [slug]);
 
-    if (!pageInstance) {return <PageTextBox text={staticPageLoadingText} />}
+    if (!pageInstance) {return <PageTextBox text={pageLoatextPageLoadingTextdingText} />}
 
     return (
         <BaseTheme {...props}>
