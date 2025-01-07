@@ -3,10 +3,21 @@
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Box, Divider, Typography } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid2';
+
+import PageHeader from './layout/PageHeader'
+import PageTextBox from './layout/PageTextBox'
 import Footer from './layout/Footer';
+
+import BaseTheme from './layout/theme/BaseTheme'
+
 import { getFunctionsUrl } from '../helpers';  // todo: abs import
 
-const BlogList: FC = () => {
+import { postListLoadingText } from '../texts';
+
+const BlogList: FC<PageThemeProps> = ({ ...props }) => {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
 
@@ -25,43 +36,57 @@ const BlogList: FC = () => {
     getPosts();
   }, []);
 
-  if (posts.length === 0) {
-    return (
-      <div class="container p-8 bg-white">
-        <div class="p-6 text-3xl font-serif">Loading posts...</div>
-      </div>
-    );
-  } else {
-    return (
-      <div class="container p-8 bg-white">
-        <div class="p-6 bg-violet-100 rounded-lg">
-          <div
-            className="eponym-basic-info"
-            class="sm:p-2.5 md:p-5 lg:p-5 sm:text-lg md:text-2xl lg:text-2xl sm:text-left md:text-justify lg:text-justify bg-violet-100"
-          >
-            <div class="p-6 text-4xl">News</div>
+  if (!posts) {return <PageTextBox text={postListLoadingText} />}
 
-            <div className="street-list" class="p-8">
-              {posts.data.map((post) => (
-                <div
-                  className="text-2xl p-3"
-                  key={post.id}
+  return (
+      <BaseTheme {...props}>
+      <CssBaseline />
+        <Grid container
+          sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              // pt: { xs: 14, sm: 20 },
+              // pb: { xs: 8, sm: 12 },
+          }}
+          >
+          <Grid
+            item
+            sx={{
+              alignItems: 'center',
+              width: '100%'  
+            }}
+          >
+              <PageHeader title="News" />
+          </Grid>
+          <Grid
+            item
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '50%',  // todo: widen for smaller screens
+            }}
+          >
+            <Box>
+              {posts.data?.map((post) => (
+                <Typography
+                  sx={{pb: '2rem'}}
+                  key={post.title}
                   onClick={() => setSelectedPost(post)}
                 >
-                  <div class="text-base p-3">{post.published}</div>
+                  <Typography >{post.published}</Typography>
                   <Link to={`/news/${post.slug}/`}>{post.title}</Link>
-                </div>
+                </Typography>
               ))}
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <Footer />
-        </div>
-      </div>
-    );
-  }
+            </Box>
+          </Grid>
+        </Grid>
+        <Divider />
+        <Footer />
+      </BaseTheme>
+    )
 };
 
 export default BlogList;

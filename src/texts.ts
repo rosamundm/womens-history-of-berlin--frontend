@@ -13,3 +13,7 @@ export const staticPageLoadingText: string = (
 export const tagListLoadingText: string = (
     "Loading tags..."
 )
+
+export const postListLoadingText: string = (
+    "Loading posts..."
+)

@@ -27,7 +27,6 @@ const App: FC = () => {
           <Route path="/news" element={<BlogList />} />
           <Route path="/news/:slug" element={<BlogPostInstance />} />
           <Route path="/:slug" element={<PageInstance />} />
-
         </Routes>
       </Router>
   );
