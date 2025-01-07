@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './layout/Footer';
-import { DEV_FUNCTIONS_PORT } from '../constants';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';  // todo: abs import
 import { Street, Tag } from '../types';
 
 const TagInstance: FC = () => {
@@ -16,7 +16,7 @@ const TagInstance: FC = () => {
   const getTag = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:${DEV_FUNCTIONS_PORT}/.netlify/functions/get-tag-instance?slug=${slug}`
+        `${getFunctionsUrl()}get-tag-instance?slug=${slug}`
       );
       setTagInstance(response.data);
     } catch (error) {

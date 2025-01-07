@@ -6,7 +6,6 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@fontsource/lato": "^5.1.0",
     "@headlessui/react": "^1.6.1",
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^6.3.0",

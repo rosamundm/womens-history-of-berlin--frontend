@@ -1,3 +1,7 @@
+export interface PageThemeProps {
+  disableCustomTheme?: boolean
+}
+
 export type Link = string
 
 export type District = {

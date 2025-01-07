@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import HomepageHeader from "./HomepageHeader";
+import { FC } from 'react';
 import Map from "../Map";
 
 // from MUI kit
@@ -10,13 +9,10 @@ import Footer from './Footer';
 
 import BaseTheme from './theme/BaseTheme'
 
-import Placeholder from './Placeholder';
+// import Placeholder from './Placeholder';
+import { PageThemeProps } from 'types';
 
-interface HomepageProps {
-  disableCustomTheme?: boolean
-}
-
-const Homepage: FC<HomepageProps> = ({ ...props }) => {
+const Homepage: FC<PageThemeProps> = ({ ...props }) => {
   return (
     <BaseTheme {...props}>
       <CssBaseline enableColorScheme />

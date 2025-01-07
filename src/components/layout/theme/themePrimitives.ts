@@ -371,14 +371,15 @@ export const typography = {
     fontWeight: 600,
   },
   subtitle1: {
-    fontSize: defaultTheme.typography.pxToRem(18),
+    fontSize: defaultTheme.typography.pxToRem(20),
   },
   subtitle2: {
     fontSize: defaultTheme.typography.pxToRem(14),
     fontWeight: 500,
   },
   body1: {
-    fontSize: defaultTheme.typography.pxToRem(14),
+    // PageTextBox default
+    fontSize: defaultTheme.typography.pxToRem(18),
   },
   body2: {
     fontSize: defaultTheme.typography.pxToRem(14),
@@ -387,6 +388,9 @@ export const typography = {
   caption: {
     fontSize: defaultTheme.typography.pxToRem(12),
     fontWeight: 400,
+  },
+  bold: {
+    fontWeight: 800,
   },
 };
 
