@@ -9,7 +9,7 @@ import Footer from './Footer';
 
 import BaseTheme from './theme/BaseTheme'
 
-// import Placeholder from './Placeholder';
+import Placeholder from './Placeholder';
 import { PageThemeProps } from 'types';
 
 const Homepage: FC<PageThemeProps> = ({ ...props }) => {
@@ -18,14 +18,14 @@ const Homepage: FC<PageThemeProps> = ({ ...props }) => {
       <CssBaseline enableColorScheme />
       <div>
 
-        {/* <Placeholder /> */}
+        <Placeholder />
 
         {/* to keep: */}
 
-        <Hero />
+        {/* <Hero />
         <Map />
         <Divider />
-        <Footer />
+        <Footer /> */}
 
         {/* to delete after design confirmed: */}
 
