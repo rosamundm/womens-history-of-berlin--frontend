@@ -76,12 +76,14 @@ const TagInstance: FC<PageThemeProps> = ({ ...props }) => {
           >
             {tagInstance.data.streets.map((street: Street) => (
               <Typography
+                sx={{color: 'red'}}
                 className="text-2xl p-3"
                 key={street.name}
                 onClick={() => setSelectedStreetFromTag(street)}
               >
                 {/* todo: change street_slug to slug */}
-                <Link to={`/streets/${street.street_slug}/`}>
+                <Link 
+                  to={`/streets/${street.street_slug}/`}>
                   {street.name}
                 </Link>
               </Typography>

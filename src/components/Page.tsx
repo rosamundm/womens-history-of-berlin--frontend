@@ -39,7 +39,7 @@ const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
       getPage();
     }, [slug]);
 
-    if (!pageInstance) {return <PageTextBox text={pageLoatextPageLoadingTextdingText} />}
+    if (!pageInstance) {return <PageTextBox text={textPageLoadingText} />}
 
     return (
         <BaseTheme {...props}>
