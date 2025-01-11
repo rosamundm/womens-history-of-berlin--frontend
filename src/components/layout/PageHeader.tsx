@@ -15,7 +15,6 @@ const PageHeader: FC<PageHeaderProps> = ({ title }) => {
           sx={(theme) => ({
             width: '100%',
             backgroundRepeat: 'no-repeat',
-    
             backgroundImage:
               'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(270, 29.10%, 49.20%), transparent)',
             ...theme.applyStyles('dark', {
@@ -39,26 +38,15 @@ const PageHeader: FC<PageHeaderProps> = ({ title }) => {
               sx={{ alignItems: 'center', width: { xs: '100%', sm: '70%' } }}
             >
               <Typography
-                variant="h3"
                 sx={{
                   display: 'flex',
                   flexDirection: { xs: 'column', sm: 'row' },
                   alignItems: 'center',
-                  fontSize: 'clamp(3rem, 10vw, 3.5rem)',
+                  fontSize: { xs: 30, sm: 60 },
+                  px: '2rem'
                 }}
               >
                 {title}
-                <Typography
-                  component="span"
-                  variant="h1"
-                  sx={(theme) => ({
-                    fontSize: 'inherit',
-                    color: 'primary.main',
-                    ...theme.applyStyles('dark', {
-                      color: 'primary.light',
-                    }),
-                  })}
-                />
               </Typography>
             </Stack>
           </Container>      

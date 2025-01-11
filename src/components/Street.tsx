@@ -103,12 +103,9 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
                 <Box
                   component="img"
                   sx={{
-                    height: '60%',
-                    width: '60%',
+                    height: { xs: '90%', sm: '60%' },
+                    width: { xs: '90%', sm: '60%' },
                     pt: '2.5rem',
-                    // display: 'flex',
-                    // maxHeight: { xs: 233, md: 167 },
-                    // maxWidth: { xs: 350, md: 250 },
                     maxWidth: '100%'
                   }}
                   alt={streetInstance.data.name}

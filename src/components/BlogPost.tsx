@@ -49,8 +49,6 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            // pt: { xs: 14, sm: 20 },
-            // pb: { xs: 8, sm: 12 },
           }}
         >
           <Grid
@@ -69,7 +67,7 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '50%',  // todo: widen for smaller screens
+              width: { xs: '80%', sm: '50%' },
             }}
           >
             <Typography variant="subtitle1">
