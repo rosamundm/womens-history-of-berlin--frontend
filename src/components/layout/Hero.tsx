@@ -59,7 +59,7 @@ const Hero: FC = () => {
           </Typography>
           <Typography
             sx={{
-              textAlign: 'center',
+              textAlign: { xs: 'left' },
               color: 'text.secondary',
               width: { sm: '100%', md: '80%' },
             }}

@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import type { ThemeOptions } from '@mui/material/styles';
-import { inputsCustomizations } from './customizations/inputs';
-import { dataDisplayCustomizations } from './customizations/dataDisplay';
-import { feedbackCustomizations } from './customizations/feedback';
-import { navigationCustomizations } from './customizations/navigation';
-import { surfacesCustomizations } from './customizations/surfaces';
 import { colorSchemes, typography, shadows, shape } from './themePrimitives';
 
 interface BaseThemeProps {
@@ -18,7 +13,7 @@ interface BaseThemeProps {
 }
 
 export default function BaseTheme(props: BaseThemeProps) {
-  const { children, disableCustomTheme, themeComponents } = props;
+  const { children, disableCustomTheme } = props;
   const theme = React.useMemo(() => {
     return disableCustomTheme
       ? {}
@@ -32,16 +27,8 @@ export default function BaseTheme(props: BaseThemeProps) {
           typography,
           shadows,
           shape,
-          components: {
-            ...inputsCustomizations,
-            ...dataDisplayCustomizations,
-            ...feedbackCustomizations,
-            ...navigationCustomizations,
-            ...surfacesCustomizations,
-            ...themeComponents,
-          },
         });
-  }, [disableCustomTheme, themeComponents]);
+  }, [disableCustomTheme]);
   if (disableCustomTheme) {
     return <React.Fragment>{children}</React.Fragment>;
   }

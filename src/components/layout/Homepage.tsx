@@ -19,14 +19,14 @@ const Homepage: FC<PageThemeProps> = ({ ...props }) => {
       <div>
 
         {/* Remove after merge to main */}
-        <Placeholder />
+        {/* <Placeholder /> */}
 
         {/* to keep: */}
 
-        {/* <Hero />
+        <Hero />
         <Map />
         <Divider />
-        <Footer /> */}
+        <Footer />
 
       </div>
     </BaseTheme>

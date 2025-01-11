@@ -48,18 +48,19 @@ const Footer: FC = () => {
             flexDirection: 'column',
             gap: 4,
             minWidth: { xs: '100%', sm: '60%' },
+            pb: { xs: '1rem' },
           }}
         >
-        <div>
+        <Box>
           <Impressum />
           <Copyright />
-        </div>
+        </Box>
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: 2,
           }}
         >
           <Link color="text.secondary" variant="body2" href="/">
