@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -14,12 +12,13 @@ import Footer from './layout/Footer';
 import BaseTheme from './layout/theme/BaseTheme'
 
 import { getFunctionsUrl } from '../helpers';
+import { PageThemeProps, Post } from '../types';
 
 import { blogPostListLoadingText } from '../texts';
 
 const BlogList: FC<PageThemeProps> = ({ ...props }) => {
-  const [posts, setPosts] = useState([]);
-  const [selectedPost, setSelectedPost] = useState(null);
+  const [posts, setPosts] = useState<Post[]>([])
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
 
   const getPosts = async () => {
     try {
@@ -49,7 +48,6 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
           }}
           >
           <Grid
-            item
             sx={{
               alignItems: 'center',
               width: '100%'  
@@ -58,7 +56,6 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
               <PageHeader title="News" />
           </Grid>
           <Grid
-            item
             sx={{
               display: 'flex',
               flexDirection: 'column',
@@ -68,13 +65,13 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
             }}
           >
             <Box>
-              {posts.data?.map((post) => (
+              {posts.map((post: Post) => (
                 <Typography
                   sx={{pb: '2rem'}}
                   key={post.title}
                   onClick={() => setSelectedPost(post)}
                 >
-                  <Typography >{post.published}</Typography>
+                  <Typography>{post.published}</Typography>
                   <Link to={`/news/${post.slug}/`}>{post.title}</Link>
                 </Typography>
               ))}

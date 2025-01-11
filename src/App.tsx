@@ -1,15 +1,9 @@
-// @ts-nocheck
-
 import { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList";
 import BlogPostInstance from "./components/BlogPost";
 import StreetInstance from "./components/Street";
-import AboutPage from "./components/staticPages/About";
 
-import FaqPage from "./components/staticPages/FAQ";
-
-import ImpressumPage from "./components/staticPages/Impressum";
 import TagList from "./components/TagList";
 import TagInstance from "./components/Tag";
 import Homepage from "./components/layout/Homepage";
