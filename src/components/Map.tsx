@@ -7,6 +7,8 @@ import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { useMap } from 'react-leaflet/hooks';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Box, Container } from '@mui/material';
+
 import { Street, StreetList } from '../types';
 import { getFunctionsUrl } from '../helpers';  // todo: abs import
 
@@ -58,9 +60,14 @@ const Map: FC = () => {
     );
   } else {
     return (
-      <div
-        className="landing"
-        class="px-500 justify-center justify-items-cewnter max-w-4xl m-auto py-8 sm:py-14 md:py-14"
+      <Container
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: { xs: '28rem', },
+        pb: { xs: 8, sm: 12 },
+      }}
       >
         <MapContainer
           center={[52.5170124, 13.389094]}
@@ -90,7 +97,7 @@ const Map: FC = () => {
             </Marker>
           )))}
         </MapContainer>
-      </div>
+      </Container>
     );
   }
 }

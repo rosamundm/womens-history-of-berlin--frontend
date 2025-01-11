@@ -44,14 +44,13 @@ const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
     return (
         <BaseTheme {...props}>
         <CssBaseline />
-            <Grid container
-            sx={{
+            <Grid
+              container
+              sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                // pt: { xs: 14, sm: 20 },
-                // pb: { xs: 8, sm: 12 },
-            }}
+              }}
             >
             <Grid
                 item
@@ -60,19 +59,19 @@ const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
                 width: '100%'  
                 }}
             >
-                <PageHeader title={pageInstance.data.title} />
+              <PageHeader title={pageInstance.data.title} />
             </Grid>
             <Grid
-                item
-                sx={{
+              item
+              sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '50%',  // todo: widen for smaller screens
-                }}
+                width: { xs: '80%', sm: '50%' },
+              }}
             >
-                <PageTextBox text={parse(pageInstance.data.body)} />
+              <PageTextBox text={parse(pageInstance.data.body)} />
             </Grid>
             </Grid>
             <Divider />

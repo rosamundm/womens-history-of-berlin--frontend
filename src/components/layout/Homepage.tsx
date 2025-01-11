@@ -18,6 +18,7 @@ const Homepage: FC<PageThemeProps> = ({ ...props }) => {
       <CssBaseline enableColorScheme />
       <div>
 
+        {/* Remove after merge to main */}
         {/* <Placeholder /> */}
 
         {/* to keep: */}
@@ -27,18 +28,6 @@ const Homepage: FC<PageThemeProps> = ({ ...props }) => {
         <Divider />
         <Footer />
 
-        {/* to delete after design confirmed: */}
-
-        {/* <LogoCollection /> */}
-        {/* <Features />
-        <Divider />
-        <Testimonials />
-        <Divider />
-        <Highlights />
-        <Divider />
-        <Pricing />
-        <Divider />
-        <FAQ /> */}
       </div>
     </BaseTheme>
   );
