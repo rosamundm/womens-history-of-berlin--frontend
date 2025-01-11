@@ -4,9 +4,10 @@
 
 @layer base {
   a {
-    @apply text-violet-600 hover:text-violet-300;
+    @apply text-purple-600 hover:text-purple-300;
   }
   div {
-    @apply selection:bg-violet-300 selection:text-white;
+    @apply selection:bg-purple-400 selection:text-white;
   }
 }
+
