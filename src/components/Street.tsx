@@ -6,7 +6,7 @@ import axios from 'axios';
 import parse from 'html-react-parser';
 import Footer from './layout/Footer';
 import { PageThemeProps, Street } from '../types';
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { streetLoadingText } from '../texts';
 
 import { Box, Divider, Stack, Typography } from '@mui/material';
@@ -78,8 +78,6 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          // pt: { xs: 14, sm: 20 },
-          // pb: { xs: 8, sm: 12 },
         }}
       >
         <Grid

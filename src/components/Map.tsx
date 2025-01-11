@@ -10,7 +10,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Box, Container } from '@mui/material';
 
 import { Street, StreetList } from '../types';
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 
 const getMapCenter = () => {
   const map = useMap();

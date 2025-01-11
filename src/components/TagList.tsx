@@ -13,7 +13,7 @@ import Footer from './layout/Footer';
 
 import BaseTheme from './layout/theme/BaseTheme'
 
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { Tag } from '../types';
 
 import { tagListLoadingText } from '../texts';
@@ -48,8 +48,6 @@ const TagList: FC<PageThemeProps> = ({ ...props }) => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              // pt: { xs: 14, sm: 20 },
-              // pb: { xs: 8, sm: 12 },
           }}
           >
           <Grid
@@ -68,7 +66,7 @@ const TagList: FC<PageThemeProps> = ({ ...props }) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '50%',  // todo: widen for smaller screens
+              width: { xs: '80%', sm: '50%' },
             }}
           >
             <Box sx={{pb: '5rem'}}>

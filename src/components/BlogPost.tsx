@@ -10,7 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid2';
 
 import Footer from './layout/Footer';
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { PageThemeProps } from '../types';
 import { blogPostLoadingText } from '../texts';
 

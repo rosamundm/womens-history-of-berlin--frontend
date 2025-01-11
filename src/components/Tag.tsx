@@ -13,7 +13,7 @@ import Footer from './layout/Footer';
 
 import BaseTheme from './layout/theme/BaseTheme'
 
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { Street, Tag } from '../types';
 
 import { tagLoadingText } from '../texts';
@@ -50,8 +50,6 @@ const TagInstance: FC<PageThemeProps> = ({ ...props }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            // pt: { xs: 14, sm: 20 },
-            // pb: { xs: 8, sm: 12 },
           }}
         >
           <Grid
@@ -70,7 +68,7 @@ const TagInstance: FC<PageThemeProps> = ({ ...props }) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '50%',  // todo: widen for smaller screens
+              width: { xs: '80%', sm: '50%' },
               pb: '5rem'
             }}
           >

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Map from "../Map";
 
-// from MUI kit
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Hero from './Hero';

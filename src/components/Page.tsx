@@ -15,7 +15,7 @@ import { Box, Container, Divider, Stack, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid2';
 
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { PageThemeProps } from '../types';
 import { textPageLoadingText } from '../texts';
 
