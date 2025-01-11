@@ -4,7 +4,7 @@
 
 @layer base {
   a {
-    @apply text-blue-700 hover:bg-gray-50 md:hover:bg-transparent md:hover:text-blue-700 md:p-0;
+    @apply text-violet-600 hover:text-violet-300;
   }
   div {
     @apply selection:bg-violet-300 selection:text-white;
