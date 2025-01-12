@@ -11,6 +11,8 @@ import { Box, Container } from '@mui/material';
 
 import { Street, StreetList } from '../types';
 import { getFunctionsUrl } from '../helpers';
+import PageTextBox from './layout/PageTextBox';
+import { streetsLoadingText } from 'texts';
 
 const getMapCenter = () => {
   const map = useMap();
@@ -49,18 +51,10 @@ const Map: FC = () => {
     getMapStreets();
   }, []);
 
-  if (!mapStreets) {
-    return (
-      <div class="p-6 text-3xl">
-        Loading map data...
-        <div class="py-3 text-xl">
-          If it takes too long, please try again or check that the URL is valid.
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <Container
+  if (!mapStreets) {return <PageTextBox text={streetsLoadingText} />}
+
+  return (
+    <Container
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -68,38 +62,36 @@ const Map: FC = () => {
         height: { xs: '28rem', },
         pb: { xs: 8, sm: 12 },
       }}
-      >
-        <MapContainer
+    >
+      <MapContainer
           center={[52.5170124, 13.389094]}
           zoom={11}
           style={{ height: "100vh", width: "100%" }}
-        >
-          <getMapCenter />
-          <TileLayer
-            attribution={attribution}
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-
-          {mapStreets.data && mapStreets.data.map((mapStreet) => (
-            mapStreet.entry_complete ? ( 
-            <Marker position={mapStreet.geocode} icon={customIconComplete}>
-              <Popup>
-                <Link target="_blank" to={`/streets/${mapStreet.street_slug}`}>
-                  {mapStreet.name}
-                </Link>
-              </Popup>
-            </Marker>
-            ) : (
-            <Marker position={mapStreet.geocode} icon={customIconIncomplete}>
-              <Popup>
+      >
+        <getMapCenter />
+        <TileLayer
+          attribution={attribution}
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {mapStreets.data && mapStreets.data.map((mapStreet: Street) => (
+          mapStreet.entry_complete ? ( 
+          <Marker position={mapStreet.geocode} icon={customIconComplete}>
+            <Popup>
+              <Link target="_blank" to={`/streets/${mapStreet.street_slug}`}>
                 {mapStreet.name}
-              </Popup>
-            </Marker>
-          )))}
-        </MapContainer>
-      </Container>
-    );
-  }
+              </Link>
+            </Popup>
+          </Marker>
+          ) : (
+          <Marker position={mapStreet.geocode} icon={customIconIncomplete}>
+            <Popup>
+              {mapStreet.name}
+            </Popup>
+          </Marker>
+        )))}
+      </MapContainer>
+    </Container>
+  );
 }
 
 export default Map;

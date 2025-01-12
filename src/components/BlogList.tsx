@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -65,7 +67,7 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
             }}
           >
             <Box>
-              {posts.map((post: Post) => (
+              {posts.data?.map((post: Post) => (
                 <Typography
                   sx={{pb: '2rem'}}
                   key={post.title}

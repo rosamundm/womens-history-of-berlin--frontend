@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import parse from 'html-react-parser';
 import Footer from './layout/Footer';
-import { PageThemeProps, Street } from '../types';
+import { PageThemeProps, Street, Tag } from '../types';
 import { getFunctionsUrl } from '../helpers';
 import { streetLoadingText } from '../texts';
 
@@ -44,8 +44,8 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
     return (
       <Typography>
         <Typography display="inline" variant="bold">Tags:{' '}</Typography>
-          {streetInstance && tags.map((tag) =>
-            tag == "[]" ? (
+          {streetInstance && tags.map((tag: Tag) =>
+            tag == "[]" ? (  // todo: check types for empty tags
               <Typography display="inline">
                 none
               </Typography>
@@ -81,7 +81,6 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
         }}
       >
         <Grid
-          item
           sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -110,10 +109,7 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
                   src={streetInstance.data.image}
                 />
 
-            <Box
-              item
-              sx={{pt: '1rem'}}
-            >
+            <Box sx={{pt: '1rem'}}>
                 {/* Birth */}
                 <Typography>
                 <Typography display="inline" variant="bold">Born:{' '}</Typography>

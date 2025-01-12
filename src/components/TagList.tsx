@@ -51,7 +51,6 @@ const TagList: FC<PageThemeProps> = ({ ...props }) => {
           }}
           >
           <Grid
-            item
             sx={{
               alignItems: 'center',
               width: '100%'  
@@ -60,7 +59,6 @@ const TagList: FC<PageThemeProps> = ({ ...props }) => {
               <PageHeader title="Explore by tag" />
           </Grid>
           <Grid
-            item
             sx={{
               display: 'flex',
               flexDirection: 'column',

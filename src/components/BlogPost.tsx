@@ -52,7 +52,6 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
           }}
         >
           <Grid
-            item
             sx={{
               alignItems: 'center',
               width: '100%'  
@@ -61,7 +60,6 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
             <PageHeader title={postInstance.data.title}/>
           </Grid>
           <Grid
-            item
             sx={{
               display: 'flex',
               flexDirection: 'column',
