@@ -15,7 +15,7 @@ import { Box, Container, Divider, Stack, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid2';
 
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { PageThemeProps } from '../types';
 import { textPageLoadingText } from '../texts';
 
@@ -44,25 +44,23 @@ const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
     return (
         <BaseTheme {...props}>
         <CssBaseline />
+          <Grid
+            container
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
             <Grid
-              container
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-            <Grid
-                item
-                sx={{
                 alignItems: 'center',
                 width: '100%'  
-                }}
+              }}
             >
               <PageHeader title={pageInstance.data.title} />
             </Grid>
             <Grid
-              item
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -73,9 +71,9 @@ const PageInstance: FC<PageThemeProps> = ({ ...props }) => {
             >
               <PageTextBox text={parse(pageInstance.data.body)} />
             </Grid>
-            </Grid>
-            <Divider />
-            <Footer />
+          </Grid>
+          <Divider />
+          <Footer />
         </BaseTheme>
     )
 };

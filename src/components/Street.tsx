@@ -5,8 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import parse from 'html-react-parser';
 import Footer from './layout/Footer';
-import { PageThemeProps, Street } from '../types';
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { PageThemeProps, Street, Tag } from '../types';
+import { getFunctionsUrl } from '../helpers';
 import { streetLoadingText } from '../texts';
 
 import { Box, Divider, Stack, Typography } from '@mui/material';
@@ -44,8 +44,8 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
     return (
       <Typography>
         <Typography display="inline" variant="bold">Tags:{' '}</Typography>
-          {streetInstance && tags.map((tag) =>
-            tag == "[]" ? (
+          {streetInstance && tags.map((tag: Tag) =>
+            tag == "[]" ? (  // todo: check types for empty tags
               <Typography display="inline">
                 none
               </Typography>
@@ -78,12 +78,9 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          // pt: { xs: 14, sm: 20 },
-          // pb: { xs: 8, sm: 12 },
         }}
       >
         <Grid
-          item
           sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -112,10 +109,7 @@ const StreetInstance: FC<PageThemeProps> = ({ ...props }) => {
                   src={streetInstance.data.image}
                 />
 
-            <Box
-              item
-              sx={{pt: '1rem'}}
-            >
+            <Box sx={{pt: '1rem'}}>
                 {/* Birth */}
                 <Typography>
                 <Typography display="inline" variant="bold">Born:{' '}</Typography>

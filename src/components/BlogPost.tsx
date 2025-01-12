@@ -10,7 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid2';
 
 import Footer from './layout/Footer';
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
 import { PageThemeProps } from '../types';
 import { blogPostLoadingText } from '../texts';
 
@@ -52,7 +52,6 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
           }}
         >
           <Grid
-            item
             sx={{
               alignItems: 'center',
               width: '100%'  
@@ -61,7 +60,6 @@ const BlogPostInstance: FC<PageThemeProps> = ({ ...props }) => {
             <PageHeader title={postInstance.data.title}/>
           </Grid>
           <Grid
-            item
             sx={{
               display: 'flex',
               flexDirection: 'column',

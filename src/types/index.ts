@@ -31,6 +31,16 @@ export type Tag = {
   streets: Street[];
 };
 
+export type Page = {
+  title: string;
+  body: string;
+  slug: string;
+}
+
+export interface Post extends Page {
+  published: string;
+}
+
 export type StreetList = Street[];
 
 export type TagList = Tag[];

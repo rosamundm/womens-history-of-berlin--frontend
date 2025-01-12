@@ -13,13 +13,14 @@ import Footer from './layout/Footer';
 
 import BaseTheme from './layout/theme/BaseTheme'
 
-import { getFunctionsUrl } from '../helpers';  // todo: abs import
+import { getFunctionsUrl } from '../helpers';
+import { PageThemeProps, Post } from '../types';
 
 import { blogPostListLoadingText } from '../texts';
 
 const BlogList: FC<PageThemeProps> = ({ ...props }) => {
-  const [posts, setPosts] = useState([]);
-  const [selectedPost, setSelectedPost] = useState(null);
+  const [posts, setPosts] = useState<Post[]>([])
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
 
   const getPosts = async () => {
     try {
@@ -46,12 +47,9 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              // pt: { xs: 14, sm: 20 },
-              // pb: { xs: 8, sm: 12 },
           }}
           >
           <Grid
-            item
             sx={{
               alignItems: 'center',
               width: '100%'  
@@ -60,23 +58,22 @@ const BlogList: FC<PageThemeProps> = ({ ...props }) => {
               <PageHeader title="News" />
           </Grid>
           <Grid
-            item
             sx={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '50%',  // todo: widen for smaller screens
+              width: { xs: '80%', sm: '50%' },
             }}
           >
             <Box>
-              {posts.data?.map((post) => (
+              {posts.data?.map((post: Post) => (
                 <Typography
                   sx={{pb: '2rem'}}
                   key={post.title}
                   onClick={() => setSelectedPost(post)}
                 >
-                  <Typography >{post.published}</Typography>
+                  <Typography>{post.published}</Typography>
                   <Link to={`/news/${post.slug}/`}>{post.title}</Link>
                 </Typography>
               ))}
