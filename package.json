@@ -31,12 +31,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start:backend": "nodemon .netlify/functions/server.js",
-    "start:frontend": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start": "netlify dev"
+    "start:backend": "netlify dev",
+    "start:frontend": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [],
@@ -58,8 +56,10 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.37.3",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "vite": "^6.0.11"
   }
 }
