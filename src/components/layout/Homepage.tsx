@@ -23,7 +23,7 @@ const Homepage: FC<PageThemeProps> = ({ ...props }) => {
         {/* to keep: */}
 
         <Hero />
-        <Map />
+        {/* <Map /> */}
         <Divider />
         <Footer />
 
