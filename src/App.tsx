@@ -14,17 +14,18 @@ import PageInstance from "./components/Page";
 
 const App: FC = () => {
   return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/streets/:street_slug" element={<StreetInstance />} />
-          <Route path="/tags" element={<TagList />} />
-          <Route path="/tags/:slug" element={<TagInstance />} />
-          <Route path="/news" element={<BlogList />} />
-          <Route path="/news/:slug" element={<BlogPostInstance />} />
-          <Route path="/:slug" element={<PageInstance />} />
-        </Routes>
-      </Router>
+    <p>This site is temporarily closed for technical maintenance — please check back again soon!</p>
+    //   <Router>
+    //     <Routes>
+    //       <Route path="/" element={<Homepage />} />
+    //       <Route path="/streets/:street_slug" element={<StreetInstance />} />
+    //       <Route path="/tags" element={<TagList />} />
+    //       <Route path="/tags/:slug" element={<TagInstance />} />
+    //       <Route path="/news" element={<BlogList />} />
+    //       <Route path="/news/:slug" element={<BlogPostInstance />} />
+    //       <Route path="/:slug" element={<PageInstance />} />
+    //     </Routes>
+    //   </Router>
   );
 }
 
