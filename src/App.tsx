@@ -14,7 +14,7 @@ import PageInstance from "./components/Page";
 
 const App: FC = () => {
   return (
-    <p>This site is temporarily closed for technical maintenance — please check back again soon!</p>
+    <h1>This site is temporarily closed for technical maintenance. Thanks for visiting and please check back again soon!</h1>
     //   <Router>
     //     <Routes>
     //       <Route path="/" element={<Homepage />} />
