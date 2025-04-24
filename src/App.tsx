@@ -10,22 +10,19 @@ import Homepage from "./components/layout/Homepage";
 
 import PageInstance from "./components/Page";
 
-// comment to trigger deploy
-
 const App: FC = () => {
   return (
-    <h1>This site is temporarily closed for technical maintenance. Thanks for visiting and please check back again soon!</h1>
-    //   <Router>
-    //     <Routes>
-    //       <Route path="/" element={<Homepage />} />
-    //       <Route path="/streets/:street_slug" element={<StreetInstance />} />
-    //       <Route path="/tags" element={<TagList />} />
-    //       <Route path="/tags/:slug" element={<TagInstance />} />
-    //       <Route path="/news" element={<BlogList />} />
-    //       <Route path="/news/:slug" element={<BlogPostInstance />} />
-    //       <Route path="/:slug" element={<PageInstance />} />
-    //     </Routes>
-    //   </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/streets/:street_slug" element={<StreetInstance />} />
+          <Route path="/tags" element={<TagList />} />
+          <Route path="/tags/:slug" element={<TagInstance />} />
+          <Route path="/news" element={<BlogList />} />
+          <Route path="/news/:slug" element={<BlogPostInstance />} />
+          <Route path="/:slug" element={<PageInstance />} />
+        </Routes>
+      </Router>
   );
 }
 
